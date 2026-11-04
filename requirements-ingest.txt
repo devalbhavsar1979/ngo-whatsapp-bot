@@ -1,0 +1,5 @@
+-r requirements.txt
+langchain-community
+faiss-cpu
+fastembed
+pypdf

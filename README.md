@@ -1,57 +1,37 @@
-# WhatsApp NGO Chatbot (RAG Enabled)
+# NGO WhatsApp Bot
 
-A low-cost WhatsApp chatbot for NGOs using Flask, Meta Cloud API, and RAG (retrieval-augmented generation) with local PDFs.
+Flask webhook application for the Meta WhatsApp Cloud API. It supports multilingual
+chat, complaint intake, FAQ responses from `qna_data.json`, optional Groq-powered
+category suggestions and translation, and optional complaint notifications through
+Resend and Google Sheets.
 
-## 🚀 Setup Steps
+## Deploy to Vercel
 
-### 1. Prerequisites
-- Python 3.10+
-- WhatsApp Business Account (Meta Developers)
-- `ngrok` installed
+See [DEPLOYMENT.md](DEPLOYMENT.md) for the Vercel setup, Meta webhook configuration,
+environment variables, smoke tests, and production limitations.
 
-### 2. Configuration
-The `.env` file is already created with your credentials. verify `PHONE_NUMBER_ID`, `ACCESS_TOKEN`, and `VERIFY_TOKEN` match your Meta dashboard.
+## Run locally
 
-### 3. Install Dependencies
-```bash
-pip install -r requirements.txt
-```
+Requires Python 3.12 (the version in `.python-version`), a configured `.env` file,
+and the values described in [DEPLOYMENT.md](DEPLOYMENT.md).
 
-### 4. Prepare Data (RAG)
-1. Place your NGO PDF file in this folder and rename it to **`ngo_data.pdf`**.
-2. Run the ingestion script to create the search index:
-   ```bash
-   python ingest.py
-   ```
-   This will create a `ngo_index` folder.
-
-### 5. Run the Server
-```bash
+```powershell
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 python app.py
 ```
-The server will start on port 5000.
 
-### 6. Expose to Internet
-In a separate terminal:
-```bash
-ngrok http 5000
-```
-Copy the secure URL (e.g., `https://abcd-123.ngrok-free.app`).
+The local server listens on port 5000. To receive Meta webhooks during development,
+expose it through an HTTPS tunnel and configure the tunnel URL ending in `/webhook`
+in the Meta app. PDF ingestion is separate from the live app; to run `ingest.py`,
+install its additional dependencies with `python -m pip install -r requirements-ingest.txt`.
 
-### 7. Configure WhatsApp Webhook
-1. Go to [Meta Developers > WhatsApp > Configuration](https://developers.facebook.com/apps/).
-2. Click **Edit** near "Callback URL".
-3. Enter your ngrok URL + `/webhook` (e.g., `https://abcd-123.ngrok-free.app/webhook`).
-4. Enter the Verify Token: `ngo_demo_token`.
-5. Click **Verify and Save**.
+## Project files
 
-## 🧪 Testing
-Send a message to your WhatsApp test number. 
-- If `ngo_data.pdf` WAS ingested: It will reply with relevant snippets from the PDF.
-- If NOT ingested: It will echo your message.
-
-## 📂 Project Structure
-- `app.py`: Main Flask webhook server
-- `ingest.py`: Script to process PDF -> Vector DB
-- `requirements.txt`: Dependencies
-- `.env`: API Keys
+- `app.py`: Flask routes, WhatsApp webhook handling, and conversation flow
+- `state_machine.py`: in-memory conversation/session state
+- `complaint_data.py` and `qna_data.json`: FAQ/category data
+- `email_service.py`: optional Resend notifications and WhatsApp attachment downloads
+- `google_sheets.py`: optional Google Sheets complaint export
+- `static/cerc_logo.png`: greeting image served to WhatsApp
