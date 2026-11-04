@@ -51,8 +51,8 @@ In the Vercel project, open **Settings → Environment Variables** and add:
 | Name | Required? | Value |
 |---|---|---|
 | `PHONE_NUMBER_ID` | Yes | Phone Number ID from Meta WhatsApp API setup |
-| `ACCESS_TOKEN` | Yes | Meta token that can send WhatsApp messages and retrieve media |
-| `VERIFY_TOKEN` | Yes | A private string you choose; use the same value in Meta |
+| `ACCESS_TOKEN` | Yes | Meta token that can send WhatsApp messages and retrieve media | EAAPhH1XOZB1kBS7V1s90W6ymxbKrYc6d7Kf8AgQD9VnXQKXM3ZASofGQwdEKEx2qrqORmtfNgOKjQ0CSBGqpbdV8wWwa0X54dCvIs8e0bI27Gaa1YtcGzhbw7dutIWqXxZBHe26qDCnFSwMIZAeU7OIZCI4pFZBYNxkZBuRwvGST971RWzLmgvPICMNdM9BXBLiwwZDZD
+| `VERIFY_TOKEN` | Yes | A secret string you generate; use the exact same value in Meta's webhook setup |
 | `GROQ_API_KEY` | Optional | Groq API key |
 | `RESEND_API_KEY` | Optional | Resend API key |
 | `ADMIN_EMAIL` | Optional | Complaint notification recipient |
@@ -61,6 +61,14 @@ In the Vercel project, open **Settings → Environment Variables** and add:
 Set the required variables for **Production**. Add them to Preview only if you
 intend to test the Meta webhook on preview deployments. After changing
 environment variables, redeploy so the new values are applied.
+
+`VERIFY_TOKEN` is not issued by Meta. Generate a random secret yourself (for
+example, with a password manager or by running
+`[guid]::NewGuid().ToString('N')` in PowerShell), save it as `VERIFY_TOKEN` in
+Vercel, and enter that exact same string as the webhook's **Verify token** in
+Meta. Do not use your Meta `ACCESS_TOKEN` for this.
+// cfc96b9547aa4c32adb951752dd98d83
+
 
 For Google Sheets, create a spreadsheet named exactly `NGO Chatbot Complaints`
 and share it with the service account's `client_email` as an editor. The app
@@ -83,6 +91,9 @@ If these URLs work, the Flask function and static asset are deployed.
 
 ## 5. Connect Meta WhatsApp webhooks
 
+For the full step-by-step Meta app and phone-number setup, see
+[META_WHATSAPP_SETUP.md](META_WHATSAPP_SETUP.md).
+
 1. In the Meta developer app, open the WhatsApp product's **Configuration**.
 2. Enter the Vercel production URL ending in `/webhook` as the **Callback URL**:
 
@@ -94,7 +105,10 @@ If these URLs work, the Flask function and static asset are deployed.
 4. Select **Verify and Save**.
 5. Subscribe the WhatsApp Business Account to the **messages** webhook field.
    The app also uses outgoing status notifications when Meta sends them.
-6. If the Meta app is in development mode, add/allow your test recipient.
+6. If using the Meta test number in development mode, add and verify the phone
+   you will test from as a **To** recipient in **WhatsApp → API Setup**. See
+   the [Meta WhatsApp setup guide](META_WHATSAPP_SETUP.md#2-try-the-test-number)
+   for the click-by-click steps.
 
 Meta verification calls `GET /webhook`; incoming messages use `POST /webhook`.
 If verification fails, confirm the URL, deployment status, and verify-token

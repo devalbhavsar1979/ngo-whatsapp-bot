@@ -297,10 +297,10 @@ def send_language_selection(to: str):
       4. A background fallback timer ensures the list still goes out if no
          status webhook arrives.
     """
-    logo_url = f"{request.host_url}static/cerc_logo.png"
+    logo_url = f"{request.host_url}static/ratna_logo.png"
     caption_text = (
-        "👋 *Welcome to CERC Complaints Desk*\n"
-        "We are here to assist you with your Complaints"
+        "👋 *Welcome to Ratna Nidhi Information Desk*\n"
+        "We are here to assist you with your Quiries"
     )
 
     resp = send_image_message(to, logo_url, caption=caption_text)

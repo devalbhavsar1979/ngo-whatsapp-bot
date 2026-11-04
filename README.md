@@ -10,6 +10,9 @@ Resend and Google Sheets.
 See [DEPLOYMENT.md](DEPLOYMENT.md) for the Vercel setup, Meta webhook configuration,
 environment variables, smoke tests, and production limitations.
 
+For setting up the Meta app, WhatsApp number, access token, and webhook itself,
+see the separate [Meta WhatsApp setup guide](META_WHATSAPP_SETUP.md).
+
 ## Run locally
 
 Requires Python 3.12 (the version in `.python-version`), a configured `.env` file,
