@@ -1,5 +1,7 @@
 -r requirements.txt
 langchain-community
+langchain-text-splitters
 faiss-cpu
 fastembed
 pypdf
+beautifulsoup4

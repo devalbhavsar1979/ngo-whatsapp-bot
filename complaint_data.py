@@ -7,13 +7,15 @@ import os
 
 # ── Dynamic Data Loading ───────────────────────────────────────────────
 def load_qna_data():
-    json_path = os.path.join(os.path.dirname(__file__), "qna_data.json")
+    configured_path = os.getenv("QNA_JSON_PATH", "qna_data.json")
+    json_path = configured_path if os.path.isabs(configured_path) else os.path.join(
+        os.path.dirname(__file__), configured_path
+    )
     try:
         with open(json_path, 'r', encoding='utf-8') as f:
             return json.load(f)
     except Exception as e:
-        print(f"Error loading qna_data.json: {e}")
-        return []
+        raise RuntimeError(f"Unable to load Q&A data from {json_path}: {e}") from e
 
 RAW_QNA_DATA = load_qna_data()
 

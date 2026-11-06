@@ -7,8 +7,10 @@ complaint email/Google Sheets exports run in daemon threads. See
 [Production readiness](#production-readiness) before using this for live
 complaints.
 
-The current FAQ/category flow uses `qna_data.json`; it does not load the PDFs or
-an FAISS index. Vercel only needs the runtime dependencies in `requirements.txt`.
+The deployment supports two answer modes. `IVR` reads only `qna_data.json`. `RAG`
+loads a prebuilt FAISS index containing derived chunks and embeddings from approved
+remote PDF/website URLs. Original PDFs are downloaded temporarily by `ingest.py`
+and are not retained by the application.
 
 ## 1. Prepare accounts and credentials
 
@@ -23,11 +25,53 @@ You will need:
 
 Optional:
 
-- `GROQ_API_KEY` enables category suggestions and translation. Without it,
-  category predictions fall back to the first FAQ categories and text is not
-  translated.
+- `GROQ_API_KEY` enables translation in IVR mode and is required for grounded
+  answer generation in RAG mode. Without it, IVR text remains untranslated.
 - `RESEND_API_KEY` and `ADMIN_EMAIL` enable complaint notification emails.
 - `GOOGLE_CREDENTIALS_JSON` enables Google Sheets exports.
+
+Answer-mode settings:
+
+| Variable | Required | Description |
+|---|---:|---|
+| `ANSWER_MODE` | Yes | `IVR` or `RAG`; missing/invalid values stop startup |
+| `QNA_JSON_PATH` | IVR | JSON path; defaults to `qna_data.json` |
+| `RAG_INDEX_PATH` | RAG | Packaged FAISS directory; defaults to `ngo_index` |
+| `RAG_EMBEDDING_MODEL` | RAG | Must match the index manifest; defaults to `BAAI/bge-small-en-v1.5` |
+| `RAG_LLM_MODEL` | RAG | Groq generation model; defaults to `llama-3.3-70b-versatile` |
+| `RAG_TOP_K` | No | Retrieved chunks; defaults to `5` |
+| `RAG_MIN_SCORE` | No | Minimum relevance score; defaults to `0.35` and should be evaluation-tuned |
+| `RAG_MAX_CONTEXT_CHARS` | No | Maximum retrieved context; defaults to `12000` |
+
+`GROQ_API_KEY` is required in RAG mode. `/health` returns HTTP 503 when the RAG
+index or Groq client is unavailable.
+
+## Build a RAG index from remote sources
+
+1. Copy `rag_sources.example.json` to an administrator-controlled manifest and
+   replace its example URLs. Do not accept source URLs from WhatsApp users.
+2. Install ingestion dependencies:
+
+   ```powershell
+   python -m pip install -r requirements-ingest.txt
+   ```
+
+3. Configure and build an immutable versioned index:
+
+   ```powershell
+   $env:RAG_SOURCE_MANIFEST = "rag_sources.json"
+   $env:RAG_ALLOWED_DOMAINS = "www.example.org,example.org"
+   python ingest.py --output ngo_index_2026_11_06
+   ```
+
+4. Package that directory with the deployment and set
+   `RAG_INDEX_PATH=ngo_index_2026_11_06`. Updating a source requires building a
+   new directory and redeploying it.
+
+The source hosts form the default redirect allow-list. `RAG_ALLOWED_DOMAINS` can
+set it explicitly. HTTPS is required by default. For an intentionally trusted
+plain-HTTP source only, `RAG_ALLOW_HTTP=true` permits HTTP while accepting its
+content-integrity risk. `RAG_MAX_SOURCE_BYTES` defaults to 25 MiB per response.
 
 Never commit `.env`, API tokens, or service account credentials.
 
@@ -51,8 +95,9 @@ In the Vercel project, open **Settings → Environment Variables** and add:
 | Name | Required? | Value |
 |---|---|---|
 | `PHONE_NUMBER_ID` | Yes | Phone Number ID from Meta WhatsApp API setup |
-| `ACCESS_TOKEN` | Yes | Meta token that can send WhatsApp messages and retrieve media | EAAPhH1XOZB1kBS7V1s90W6ymxbKrYc6d7Kf8AgQD9VnXQKXM3ZASofGQwdEKEx2qrqORmtfNgOKjQ0CSBGqpbdV8wWwa0X54dCvIs8e0bI27Gaa1YtcGzhbw7dutIWqXxZBHe26qDCnFSwMIZAeU7OIZCI4pFZBYNxkZBuRwvGST971RWzLmgvPICMNdM9BXBLiwwZDZD
+| `ACCESS_TOKEN` | Yes | Meta token that can send WhatsApp messages and retrieve media |
 | `VERIFY_TOKEN` | Yes | A secret string you generate; use the exact same value in Meta's webhook setup |
+| `ANSWER_MODE` | Yes | Set to `IVR` or `RAG` |
 | `GROQ_API_KEY` | Optional | Groq API key |
 | `RESEND_API_KEY` | Optional | Resend API key |
 | `ADMIN_EMAIL` | Optional | Complaint notification recipient |

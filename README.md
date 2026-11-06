@@ -1,9 +1,14 @@
 # NGO WhatsApp Bot
 
 Flask webhook application for the Meta WhatsApp Cloud API. It supports multilingual
-chat, complaint intake, FAQ responses from `qna_data.json`, optional Groq-powered
-category suggestions and translation, and optional complaint notifications through
-Resend and Google Sheets.
+chat, complaint intake, strict predefined FAQ responses from `qna_data.json`, and a
+configurable RAG question-answer mode over approved remote PDF/website sources.
+Complaint notifications can optionally be sent through Resend and Google Sheets.
+
+Set `ANSWER_MODE=IVR` for predefined Product/Service -> Category -> FAQ navigation,
+or `ANSWER_MODE=RAG` for natural-language answers grounded in a prebuilt FAISS index.
+The variable is required and an invalid or missing value stops application startup.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for index-building and environment configuration.
 
 ## Deploy to Vercel
 
@@ -34,7 +39,10 @@ install its additional dependencies with `python -m pip install -r requirements-
 
 - `app.py`: Flask routes, WhatsApp webhook handling, and conversation flow
 - `state_machine.py`: in-memory conversation/session state
-- `complaint_data.py` and `qna_data.json`: FAQ/category data
+- `complaint_data.py` and `qna_data.json`: strict IVR FAQ/category data
+- `answer_config.py` and `rag_service.py`: mode configuration and grounded RAG answers
+- `ingest.py`: controlled remote PDF/website ingestion into a packaged FAISS index
+- `rag_sources.example.json`: example administrator-controlled source manifest
 - `email_service.py`: optional Resend notifications and WhatsApp attachment downloads
 - `google_sheets.py`: optional Google Sheets complaint export
 - `static/cerc_logo.png`: greeting image served to WhatsApp

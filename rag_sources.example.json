@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "source_id": "ngo-about",
+      "type": "pdf",
+      "url": "https://example.org/documents/ngo-about.pdf",
+      "title": "NGO About and Mission",
+      "enabled": true
+    },
+    {
+      "source_id": "ngo-services",
+      "type": "website",
+      "url": "https://example.org/services",
+      "title": "NGO Services",
+      "enabled": true
+    }
+  ]
+}

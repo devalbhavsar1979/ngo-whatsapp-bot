@@ -19,6 +19,8 @@ PRODUCT_MENU = "PRODUCT_MENU"
 SERVICE_MENU = "SERVICE_MENU"
 MORE_OPTIONS_MENU = "MORE_OPTIONS_MENU"
 AWAITING_AI_INPUT = "AWAITING_AI_INPUT"
+RAG_AWAITING_QUESTION = "RAG_AWAITING_QUESTION"
+RAG_ANSWER = "RAG_ANSWER"
 FAQ_LIST = "FAQ_LIST"
 FAQ_ANSWER = "FAQ_ANSWER"
 COLLECT_DESCRIPTION = "COLLECT_DESCRIPTION"
@@ -41,6 +43,9 @@ class UserSession:
         self.lang = None  # e.g. "lang_english"
         self.category = None
         self.selected_question = None
+        self.answer_mode = None
+        self.last_question = None
+        self.last_answer_sources = []
 
         # Personal details
         self.user_name = None

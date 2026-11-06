@@ -15,12 +15,15 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
+from answer_config import load_answer_config
+
 # Local modules
 from complaint_data import CATEGORIES, CATEGORY_QUESTIONS, get_dummy_answer, get_questions_for_category
 from state_machine import (
     get_session, reset_session, UserSession,
     LANG_SELECT, CATEGORY_MENU, MAIN_CATEGORY_MENU, PRODUCT_MENU, SERVICE_MENU,
     AWAITING_AI_INPUT, FAQ_LIST, FAQ_ANSWER,
+    RAG_AWAITING_QUESTION, RAG_ANSWER,
     COLLECT_USER_NAME, COLLECT_USER_STATE,
     COLLECT_USER_VILLAGE, COLLECT_USER_CONTACT, COLLECT_USER_EMAIL,
     COLLECT_DESCRIPTION, COLLECT_OPPOSITE_NAME, COLLECT_OPPOSITE_ADDRESS,
@@ -41,6 +44,13 @@ WHATSAPP_API_URL = f"https://graph.facebook.com/v22.0/{PHONE_NUMBER_ID}/messages
 from groq import Groq
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 groq_client = Groq(api_key=GROQ_API_KEY) if GROQ_API_KEY else None
+
+ANSWER_CONFIG = load_answer_config()
+RAG_SERVICE = None
+if ANSWER_CONFIG.mode == "RAG":
+    from rag_service import RagAnswerService
+    RAG_SERVICE = RagAnswerService(ANSWER_CONFIG, groq_client)
+print(f"Answer mode: {ANSWER_CONFIG.mode}")
 
 # ── Message Deduplication ───────────────────────────────────────────────
 # WhatsApp retries webhooks on 500 errors, causing duplicate messages.
@@ -388,6 +398,57 @@ def send_more_options_menu(to: str, session: UserSession):
     """
     send_main_category_menu(to, session)
 
+
+def send_rag_question_prompt(to: str, session: UserSession):
+    """Enter the natural-language question flow used only in RAG mode."""
+    session.answer_mode = "RAG"
+    session.state = RAG_AWAITING_QUESTION
+    send_whatsapp_message(
+        to,
+        translate_text(
+            "Please type your question. I will answer using only our approved documents and website sources.\n\n"
+            "You can also type *file complaint* or *restart*.",
+            session.lang,
+        ),
+    )
+
+
+def send_rag_result(to: str, result, session: UserSession):
+    from rag_service import format_sources
+
+    answer = result.answer
+    if result.status != "answered":
+        answer = translate_text(answer, session.lang)
+    source_text = format_sources(result.sources)
+    message = answer[:3000] + source_text[:900]
+    send_whatsapp_message(to, message)
+    session.last_answer_sources = [source.__dict__ for source in result.sources]
+    session.state = RAG_ANSWER
+    send_interactive_buttons(to, translate_text("What would you like to do?", session.lang), [
+        ("rag_ask_another", safe_truncate(translate_text("Ask another", session.lang), 20)),
+        ("rag_file_complaint", safe_truncate(translate_text("File Complaint", session.lang), 20)),
+        ("rag_contact", safe_truncate(translate_text("Contact Support", session.lang), 20)),
+    ])
+
+
+def answer_rag_question(to: str, question: str, session: UserSession):
+    if len(question) > 2000:
+        send_whatsapp_message(
+            to,
+            translate_text("Please shorten your question to 2,000 characters or fewer.", session.lang),
+        )
+        return
+    send_whatsapp_message(to, translate_text("Searching our approved sources...", session.lang))
+    session.last_question = question
+    result = RAG_SERVICE.answer(question, session.lang) if RAG_SERVICE else None
+    if result is None:
+        send_whatsapp_message(
+            to,
+            translate_text("The knowledge service is temporarily unavailable.", session.lang),
+        )
+        return
+    send_rag_result(to, result, session)
+
 def send_product_menu(to: str, session: UserSession):
     rows = []
     for cat in PRODUCT_CATEGORIES:
@@ -461,13 +522,8 @@ def send_category_menu(to: str, session: UserSession, page: int = 0):
 
     option_rows = []
     
-    # 2. Add 'Describe Issue' option - Always available
-    option_rows.append({
-        "id": "cat_describe", 
-        "title": safe_truncate(translate_text("✍️ Describe Issue", session.lang), 24)
-    })
-
-    # 3. Add Previous and Next page navigation
+    # Strict IVR mode intentionally has no free-text category prediction.
+    # Add Previous and Next page navigation.
     if page > 0:
         option_rows.append({
             "id": f"cat_page_{page-1}",
@@ -839,6 +895,18 @@ def handle_webhook():
 def handle_text(sender: str, text: str, session: UserSession):
     """Route text messages based on current state."""
     state = session.state
+    command = text.strip().lower()
+
+    if command in ("restart", "start over") and state != LANG_SELECT:
+        reset_session(sender)
+        send_language_selection(sender)
+        return
+
+    if ANSWER_CONFIG.mode == "RAG" and command in ("file complaint", "complaint"):
+        session.category = "Open"
+        session.state = COLLECT_DESCRIPTION
+        send_collection_prompt(sender, COLLECT_DESCRIPTION, session)
+        return
 
     # NEW user or restart
     if state == LANG_SELECT:
@@ -847,22 +915,31 @@ def handle_text(sender: str, text: str, session: UserSession):
         else:
             send_language_selection(sender)
 
-    # Waiting for complaint description (AI matching)
+    # Legacy AI category matching is disabled in strict IVR mode.
     elif state == AWAITING_AI_INPUT:
-        send_whatsapp_message(sender, translate_text("🔍 Analyzing your complaint...", session.lang))
-        predictions = predict_category(text)
-        # Store the text for later use as description
-        session.complaint_description = text
-        send_predicted_categories(sender, predictions, session)
-        # Stay in AWAITING_AI_INPUT — will move to FAQ_LIST on category selection
+        session.state = MAIN_CATEGORY_MENU
+        send_whatsapp_message(sender, translate_text("Please select one of the available options.", session.lang))
+        send_main_category_menu(sender, session)
+
+    elif state in (RAG_AWAITING_QUESTION, RAG_ANSWER):
+        answer_rag_question(sender, text, session)
 
     # Waiting for "Show All" text input (user typing a category name)
     elif state == CATEGORY_MENU:
-        # User typed text while in category menu — treat as AI input
-        send_whatsapp_message(sender, translate_text("🔍 Analyzing your complaint...", session.lang))
-        predictions = predict_category(text)
-        session.complaint_description = text
-        send_predicted_categories(sender, predictions, session)
+        send_whatsapp_message(sender, translate_text("Please select one of the available options.", session.lang))
+        send_category_menu(sender, session)
+
+    elif state == MAIN_CATEGORY_MENU:
+        send_whatsapp_message(sender, translate_text("Please select one of the available options.", session.lang))
+        send_main_category_menu(sender, session)
+
+    elif state == PRODUCT_MENU:
+        send_whatsapp_message(sender, translate_text("Please select one of the available options.", session.lang))
+        send_product_menu(sender, session)
+
+    elif state == SERVICE_MENU:
+        send_whatsapp_message(sender, translate_text("Please select one of the available options.", session.lang))
+        send_service_menu(sender, session)
 
     # ── Data Collection States ──────────────────────────────────────
     elif state == COLLECT_USER_NAME:
@@ -887,8 +964,12 @@ def handle_text(sender: str, text: str, session: UserSession):
 
     elif state == COLLECT_USER_EMAIL:
         session.user_email = text
-        session.state = MAIN_CATEGORY_MENU
-        send_main_category_menu(sender, session)
+        session.answer_mode = ANSWER_CONFIG.mode
+        if ANSWER_CONFIG.mode == "RAG":
+            send_rag_question_prompt(sender, session)
+        else:
+            session.state = MAIN_CATEGORY_MENU
+            send_main_category_menu(sender, session)
 
     elif state == COLLECT_DESCRIPTION:
         session.complaint_description = text
@@ -993,6 +1074,31 @@ def handle_interactive(sender: str, selected_id: str, selected_title: str,
         send_collection_prompt(sender, COLLECT_USER_VILLAGE, session)
         return
 
+    # ── RAG Answer Actions ──────────────────────────────────────────
+    if ANSWER_CONFIG.mode == "RAG" and selected_id == "rag_ask_another":
+        send_rag_question_prompt(sender, session)
+        return
+
+    if ANSWER_CONFIG.mode == "RAG" and selected_id == "rag_file_complaint":
+        session.category = "Open"
+        session.state = COLLECT_DESCRIPTION
+        send_collection_prompt(sender, COLLECT_DESCRIPTION, session)
+        return
+
+    if ANSWER_CONFIG.mode == "RAG" and selected_id == "rag_contact":
+        contact = (
+            "For more information, call 18002330332 (Mon-Fri, 10:30 AM to 5:30 PM) "
+            "or email complaints@cercindia.org."
+        )
+        send_whatsapp_message(sender, translate_text(contact, session.lang))
+        send_rag_question_prompt(sender, session)
+        return
+
+    if ANSWER_CONFIG.mode == "RAG" and session.state in (RAG_AWAITING_QUESTION, RAG_ANSWER):
+        # Ignore stale IVR callbacks after a deployment changes mode.
+        send_rag_question_prompt(sender, session)
+        return
+
     # ── Main Menu Selections ────────────────────────────────────────
     if selected_id == "menu_product":
         session.state = PRODUCT_MENU
@@ -1057,8 +1163,10 @@ def handle_interactive(sender: str, selected_id: str, selected_title: str,
         return
 
     if selected_id == "cat_describe":
-        session.state = AWAITING_AI_INPUT
-        send_whatsapp_message(sender, translate_text("✍️ Please describe your issue in a few words:", session.lang))
+        # Backward compatibility for a stale button sent before strict IVR mode.
+        session.state = MAIN_CATEGORY_MENU
+        send_whatsapp_message(sender, translate_text("Please select one of the available options.", session.lang))
+        send_main_category_menu(sender, session)
         return
 
     if selected_id.startswith("cat_"):
@@ -1262,14 +1370,27 @@ def handle_media(sender: str, message: dict, msg_type: str,
 
 @app.route("/", methods=["GET", "HEAD"])
 def health_check():
-    return jsonify({"status": "running", "service": "NGO WhatsApp Bot"}), 200
+    return jsonify({
+        "status": "running",
+        "service": "NGO WhatsApp Bot",
+        "answer_mode": ANSWER_CONFIG.mode,
+    }), 200
 
 
 @app.route("/health", methods=["GET", "HEAD"])
 def health_check_monitor():
+    rag_ready = ANSWER_CONFIG.mode != "RAG" or (RAG_SERVICE and RAG_SERVICE.ready)
+    status_code = 200 if rag_ready else 503
     if request.method == "HEAD":
-        return "", 200
-    return jsonify({"status": "healthy"}), 200
+        return "", status_code
+    payload = {
+        "status": "healthy" if rag_ready else "not_ready",
+        "answer_mode": ANSWER_CONFIG.mode,
+    }
+    if ANSWER_CONFIG.mode == "RAG":
+        payload["index_version"] = RAG_SERVICE.index_version if RAG_SERVICE else "unknown"
+        payload["rag_ready"] = bool(RAG_SERVICE and RAG_SERVICE.ready)
+    return jsonify(payload), status_code
 
 
 if __name__ == "__main__":

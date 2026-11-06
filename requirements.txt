@@ -2,6 +2,10 @@ flask==3.0.0
 requests==2.31.0
 python-dotenv==1.0.0
 groq
+langchain-community
+langchain-text-splitters
+faiss-cpu
+fastembed
 
 gspread==6.1.2
 google-auth==2.35.0
