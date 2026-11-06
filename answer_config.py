@@ -63,7 +63,7 @@ def load_answer_config() -> AnswerConfig:
             "RAG_EMBEDDING_MODEL_PATH", ""
         ).strip(),
         rag_llm_model=os.getenv(
-            "RAG_LLM_MODEL", "llama-3.3-70b-versatile"
+            "RAG_LLM_MODEL", "openai/gpt-oss-120b"
         ).strip(),
         rag_top_k=_integer("RAG_TOP_K", 5, 1, 20),
         rag_min_score=_number("RAG_MIN_SCORE", 0.35, 0.0, 1.0),

@@ -269,7 +269,7 @@ def translate_text(text: str, target_lang_id: str) -> str:
                 {"role": "system", "content": f"You are a professional translator. Translate the following text to {target_lang}. Preserve all formatting, emojis. ONLY output the translation, nothing else, without quotes."},
                 {"role": "user", "content": text}
             ],
-            model="llama-3.3-70b-versatile",
+            model=ANSWER_CONFIG.rag_llm_model,
             temperature=0.1
         )
         translated = completion.choices[0].message.content.strip()

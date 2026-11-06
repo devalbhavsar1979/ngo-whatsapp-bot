@@ -39,7 +39,7 @@ Answer-mode settings:
 | `RAG_INDEX_PATH` | RAG | Packaged FAISS directory; defaults to `ngo_index` |
 | `RAG_EMBEDDING_MODEL` | RAG | Must match the index manifest; defaults to `BAAI/bge-small-en-v1.5` |
 | `RAG_EMBEDDING_MODEL_PATH` | RAG on Vercel | Bundled model directory; use `embedding_models/bge-small-en-v1.5` |
-| `RAG_LLM_MODEL` | RAG | Groq generation model; defaults to `llama-3.3-70b-versatile` |
+| `RAG_LLM_MODEL` | RAG | Groq generation model; defaults to `openai/gpt-oss-120b` |
 | `RAG_TOP_K` | No | Retrieved chunks; defaults to `5` |
 | `RAG_MIN_SCORE` | No | Minimum relevance score; defaults to `0.35` and should be evaluation-tuned |
 | `RAG_MAX_CONTEXT_CHARS` | No | Maximum retrieved context; defaults to `12000` |

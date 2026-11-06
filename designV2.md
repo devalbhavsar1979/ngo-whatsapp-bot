@@ -65,7 +65,7 @@ Allowed values are exactly `IVR` and `RAG`, compared case-insensitively after tr
 | `RAG_INDEX_PATH` or vector-store connection settings | RAG | Identifies the durable, versioned knowledge index. |
 | `RAG_PDF_URLS` | RAG ingestion | Comma-separated administrator-approved HTTP(S) PDF URLs or, preferably, a manifest containing those URLs. |
 | `RAG_WEBSITE_URLS` | RAG ingestion | Comma-separated seed URLs or a manifest reference containing allowed website URLs. |
-| `RAG_LLM_MODEL` | RAG | Answer-generation model name. |
+| `RAG_LLM_MODEL` | RAG | Answer-generation model name. Current default: `openai/gpt-oss-120b`; verify against Groq's supported-model list before deployment. |
 | `RAG_EMBEDDING_MODEL` | RAG | Embedding model name; must match the model used to build the index. |
 | `RAG_TOP_K` | No | Number of candidate chunks retrieved; suggested initial value `5`. |
 | `RAG_MIN_SCORE` | No | Minimum retrieval relevance required before answering; determined by evaluation for the selected store/model. |
