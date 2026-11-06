@@ -41,6 +41,7 @@ install its additional dependencies with `python -m pip install -r requirements-
 - `state_machine.py`: in-memory conversation/session state
 - `complaint_data.py` and `qna_data.json`: strict IVR FAQ/category data
 - `answer_config.py` and `rag_service.py`: mode configuration and grounded RAG answers
+- `embedding_provider.py`: packaged/local FastEmbed model adapter for serverless runtime
 - `ingest.py`: controlled remote PDF/website ingestion into a packaged FAISS index
 - `rag_sources.example.json`: example administrator-controlled source manifest
 - `email_service.py`: optional Resend notifications and WhatsApp attachment downloads

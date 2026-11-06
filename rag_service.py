@@ -55,11 +55,12 @@ class RagAnswerService:
                 )
 
             # Heavy RAG packages are intentionally imported only in RAG mode.
-            from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
             from langchain_community.vectorstores import FAISS
+            from embedding_provider import create_embeddings
 
-            embeddings = FastEmbedEmbeddings(
-                model_name=self.config.rag_embedding_model
+            embeddings = create_embeddings(
+                self.config.rag_embedding_model,
+                self.config.rag_embedding_model_path,
             )
             self.vector_store = FAISS.load_local(
                 str(index_path), embeddings, allow_dangerous_deserialization=True

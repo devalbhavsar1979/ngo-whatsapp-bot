@@ -14,10 +14,10 @@ from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 from langchain_community.document_loaders import PyPDFLoader
-from langchain_community.embeddings.fastembed import FastEmbedEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+from embedding_provider import create_embeddings
 
 DEFAULT_EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
 MAX_DOWNLOAD_BYTES = int(os.getenv("RAG_MAX_SOURCE_BYTES", str(25 * 1024 * 1024)))
@@ -174,7 +174,9 @@ def build_index(output, embedding_model):
     splitter = RecursiveCharacterTextSplitter(chunk_size=900, chunk_overlap=150)
     chunks = splitter.split_documents(documents)
     vector_store = FAISS.from_documents(
-        chunks, FastEmbedEmbeddings(model_name=embedding_model))
+        chunks,
+        create_embeddings(embedding_model, os.getenv("RAG_EMBEDDING_MODEL_PATH", "")),
+    )
     output.mkdir(parents=True)
     vector_store.save_local(str(output))
     now = datetime.now(timezone.utc)

@@ -13,6 +13,7 @@ class AnswerConfig:
     qna_json_path: str
     rag_index_path: str
     rag_embedding_model: str
+    rag_embedding_model_path: str
     rag_llm_model: str
     rag_top_k: int
     rag_min_score: float
@@ -57,6 +58,9 @@ def load_answer_config() -> AnswerConfig:
         rag_index_path=os.getenv("RAG_INDEX_PATH", "ngo_index").strip(),
         rag_embedding_model=os.getenv(
             "RAG_EMBEDDING_MODEL", "BAAI/bge-small-en-v1.5"
+        ).strip(),
+        rag_embedding_model_path=os.getenv(
+            "RAG_EMBEDDING_MODEL_PATH", ""
         ).strip(),
         rag_llm_model=os.getenv(
             "RAG_LLM_MODEL", "llama-3.3-70b-versatile"

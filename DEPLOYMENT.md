@@ -38,6 +38,7 @@ Answer-mode settings:
 | `QNA_JSON_PATH` | IVR | JSON path; defaults to `qna_data.json` |
 | `RAG_INDEX_PATH` | RAG | Packaged FAISS directory; defaults to `ngo_index` |
 | `RAG_EMBEDDING_MODEL` | RAG | Must match the index manifest; defaults to `BAAI/bge-small-en-v1.5` |
+| `RAG_EMBEDDING_MODEL_PATH` | RAG on Vercel | Bundled model directory; use `embedding_models/bge-small-en-v1.5` |
 | `RAG_LLM_MODEL` | RAG | Groq generation model; defaults to `llama-3.3-70b-versatile` |
 | `RAG_TOP_K` | No | Retrieved chunks; defaults to `5` |
 | `RAG_MIN_SCORE` | No | Minimum relevance score; defaults to `0.35` and should be evaluation-tuned |
@@ -45,6 +46,13 @@ Answer-mode settings:
 
 `GROQ_API_KEY` is required in RAG mode. `/health` returns HTTP 503 when the RAG
 index or Groq client is unavailable.
+
+Vercel should use the deployment-packaged embedding model instead of attempting
+to download it during a function cold start:
+
+```dotenv
+RAG_EMBEDDING_MODEL_PATH=embedding_models/bge-small-en-v1.5
+```
 
 ## Build a RAG index from remote sources
 
