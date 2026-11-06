@@ -1,0 +1,18 @@
+{
+  "sources": [
+    {
+      "source_id": "ngo-about",
+      "type": "pdf",
+      "url": "https://boookcorner.in/doc/Ba_Boook_Corner_FAQ.pdf",
+      "title": "NGO About and Mission",
+      "enabled": true
+    },
+    {
+      "source_id": "ngo-services",
+      "type": "website",
+      "url": "https://boookcorner.in",
+      "title": "NGO Services",
+      "enabled": true
+    }
+  ]
+}

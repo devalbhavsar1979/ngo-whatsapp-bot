@@ -1,0 +1,27 @@
+{
+  "index_version": "20261106T172804Z",
+  "created_at": "2026-11-06T17:28:04.665307+00:00",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "chunk_size": 900,
+  "chunk_overlap": 150,
+  "source_count": 2,
+  "chunk_count": 11,
+  "sources": [
+    {
+      "source_id": "ngo-about",
+      "type": "pdf",
+      "title": "NGO About and Mission",
+      "url": "https://boookcorner.in/doc/Ba_Boook_Corner_FAQ.pdf",
+      "checksum": "5551cb46b96775f7965513e8c5e148640019bb2242488cb1f974250036414b04",
+      "documents": 3
+    },
+    {
+      "source_id": "ngo-services",
+      "type": "website",
+      "title": "NGO Services",
+      "url": "https://boookcorner.in",
+      "checksum": "7aa4563eb8db17cc5caf4e9b0dafc92f49e3ee5534b5cf4a3dbd8c4862ae5799",
+      "documents": 1
+    }
+  ]
+}
