@@ -19,6 +19,7 @@ from answer_config import load_answer_config
 
 # Local modules
 from complaint_data import CATEGORIES, CATEGORY_QUESTIONS, get_dummy_answer, get_questions_for_category
+from ivr_config import IVR_CONFIG
 from state_machine import (
     get_session, reset_session, UserSession,
     LANG_SELECT, CATEGORY_MENU, MAIN_CATEGORY_MENU, PRODUCT_MENU, SERVICE_MENU,
@@ -334,59 +335,38 @@ def send_language_selection(to: str):
         _send_language_prompt_now(to)
 
 
-PRODUCT_CATEGORIES = [
-    "Automobile", "Electrical Home Appliances", "Solar Panel",
-    "Mobile Handset & Electronics", "E- Commerce", "Weight, Size & Description"
-]
-SERVICE_CATEGORIES = [
-    "Airline", "Banking (Credit Card, Investments, and loans)", 
-    "Insurances (Life, Health, Travel, Motor, etc.)", "Internet, Mobile & telecom services", 
-    "Education", "Taxi, Bus, Railway", "Tour Packages (Tour, Vacation Club, and Hotel)",
-    "Real Estate", "Post & courier", "LPG & Gas", "Electricity Company", "Advocate & Court Procedure"
-]
-
-# Display label → canonical category name used in qna_data.json (CATEGORIES list)
-# This lets us show user-friendly names in Product/Service menus while still
-# pulling the correct FAQ questions/answers for that category.
-DISPLAY_TO_DATA_CATEGORY = {
-    # Products
-    "Automobile": "Vehicle",
-    "Electrical Home Appliances": "Electrical & Electronic App.",
-    "Solar Panel": "Solar Panel",
-    "Mobile Handset & Electronics": "Mobile Handset",
-    "E- Commerce": "E commerce",
-    "Weight, Size & Description": "Weights & Measures",
-    # Services
-    "Airline": "Airlines",
-    "Banking (Credit Card, Investments, and loans)": "Banking Services",
-    "Insurances (Life, Health, Travel, Motor, etc.)": "Insurances (Life, Health, Travel, Motor, etc.)",
-    "Internet, Mobile & telecom services": "Internet Services",
-    "Education": "Educational Institute",
-    "Taxi, Bus, Railway": "Railway",
-    "Tour Packages (Tour, Vacation Club, and Hotel)": "Transport Tours & Travels",
-    "Real Estate": "Housing/ Builder",
-    "Post & courier": "Postal Services",
-    "LPG & Gas": "LPG, PNG & Petrol",
-    "Electricity Company": "Electricity Boards",
-    "Advocate & Court Procedure": "Advocate",
-}
-
-
-def resolve_data_category(display_name: str) -> str:
-    """Map a UI/display category name to the canonical key in qna_data.json."""
-    return DISPLAY_TO_DATA_CATEGORY.get(display_name, display_name)
-
-
 def send_main_category_menu(to: str, session: UserSession):
-    buttons = [
-        ("menu_product", safe_truncate(translate_text("📦 Product", session.lang), 20)),
-        ("menu_service", safe_truncate(translate_text("🛠️ Service", session.lang), 20)),
-        ("menu_direct_file", safe_truncate(translate_text("📝 File Complaint", session.lang), 20)),
-    ]
-    send_interactive_buttons(
-        to, 
-        translate_text("Select Categories:", session.lang), 
-        buttons
+    session.ivr_config_version = IVR_CONFIG.config_version
+    rows = []
+    for group in IVR_CONFIG.groups():
+        label = IVR_CONFIG.text(group["label"])
+        title = f"{group.get('icon', '')} {label}".strip()
+        rows.append({"id": f"ivr_group_{group['id']}",
+                     "title": safe_truncate(translate_text(title, session.lang), 24)})
+    action = IVR_CONFIG.raw["actions"]["file_complaint"]
+    if action.get("enabled"):
+        rows.append({"id": "menu_direct_file", "title": safe_truncate(
+            translate_text(f"📝 {IVR_CONFIG.text(action['label'])}", session.lang), 24)})
+    send_interactive_list(
+        to, header="",
+        body=translate_text(IVR_CONFIG.text(IVR_CONFIG.raw["main_menu"]["prompt"]), session.lang),
+        footer="", button=translate_text("Choose Option", session.lang),
+        sections=[{"title": translate_text("Main Menu", session.lang), "rows": rows}],
+    )
+
+
+def ivr_support_text() -> str:
+    support = IVR_CONFIG.raw["support"]
+    hours = IVR_CONFIG.text(support.get("hours", {}))
+    return f"Phone: {support['phone']} ({hours})\nEmail: {support['email']}"
+
+
+def format_ivr_answer(question: str, answer: str) -> str:
+    return (
+        f"📋 *Regarding your query:*\n_{question}_\n\n"
+        f"💡 *Guidance:*\n{answer}\n\n"
+        f"{ivr_support_text()}\n\n"
+        "If this does not resolve your issue, you can file a formal complaint through this bot."
     )
 
 def send_more_options_menu(to: str, session: UserSession):
@@ -450,120 +430,51 @@ def answer_rag_question(to: str, question: str, session: UserSession):
     send_rag_result(to, result, session)
 
 def send_product_menu(to: str, session: UserSession):
-    rows = []
-    for cat in PRODUCT_CATEGORIES:
-        clean = cat.replace(" ", "_").replace("&", "n")[:20]
-        rows.append({"id": f"cat_{clean}", "title": safe_truncate(translate_text(cat, session.lang), 24)})
-    rows.append({"id": "menu_direct_file", "title": safe_truncate(translate_text("📝 File Complaint", session.lang), 24)})
-    rows.append({"id": "menu_back_main", "title": safe_truncate(translate_text("🔙 Main Menu", session.lang), 24)})
-    send_interactive_list(
-        to,
-        header="",
-        body=translate_text("Product Categories:", session.lang),
-        footer="",
-        button=translate_text("Select Product", session.lang),
-        sections=[{"title": translate_text("Products", session.lang), "rows": rows}]
-    )
+    send_group_menu(to, session, "products")
 
 def send_service_menu(to: str, session: UserSession, page: int = 0):
-    page_size = 7
+    send_group_menu(to, session, "services", page)
+
+
+def send_group_menu(to: str, session: UserSession, group_id: str, page: int = 0):
+    group = IVR_CONFIG.groups_by_id.get(group_id)
+    if not group or not group.get("enabled"):
+        send_main_category_menu(to, session)
+        return
+    session.selected_group_id = group_id
+    session.state = CATEGORY_MENU
+    # Six categories leave room for Previous, Next, File Complaint, and Back
+    # while respecting WhatsApp's maximum of 10 list rows.
+    page_size = 6
     start = page * page_size
     end = start + page_size
-    page_cats = SERVICE_CATEGORIES[start:end]
-    
-    rows = []
-    for cat in page_cats:
-        clean = cat.replace(" ", "_").replace("&", "n")[:20]
-        rows.append({"id": f"cat_{clean}", "title": safe_truncate(translate_text(cat, session.lang), 24)})
-    
+    categories = IVR_CONFIG.categories(group_id)
+    page_categories = categories[start:end]
+    rows = [{
+        "id": f"ivr_cat_{category['id']}",
+        "title": safe_truncate(translate_text(IVR_CONFIG.text(category["label"]), session.lang), 24),
+    } for category in page_categories]
     opt_rows = []
     if page > 0:
-        opt_rows.append({"id": f"serv_page_{page-1}", "title": safe_truncate(translate_text("⬅️ Previous", session.lang), 24)})
-    if end < len(SERVICE_CATEGORIES):
-        opt_rows.append({"id": f"serv_page_{page+1}", "title": safe_truncate(translate_text("➡️ Next Options", session.lang), 24)})
-    
+        opt_rows.append({"id": f"ivr_group_page_{group_id}_{page-1}",
+                         "title": safe_truncate(translate_text("⬅️ Previous", session.lang), 24)})
+    if end < len(categories):
+        opt_rows.append({"id": f"ivr_group_page_{group_id}_{page+1}",
+                         "title": safe_truncate(translate_text("➡️ Next", session.lang), 24)})
     opt_rows.append({"id": "menu_direct_file", "title": safe_truncate(translate_text("📝 File Complaint", session.lang), 24)})
     opt_rows.append({"id": "menu_back_main", "title": safe_truncate(translate_text("🔙 Main Menu", session.lang), 24)})
-    
-    sections = [{"title": translate_text("Services", session.lang), "rows": rows}]
+    group_label = IVR_CONFIG.text(group["label"])
+    sections = [{"title": safe_truncate(translate_text(group_label, session.lang), 24), "rows": rows}]
     if opt_rows:
         sections.append({"title": translate_text("Navigation", session.lang), "rows": opt_rows})
-
     send_interactive_list(
-        to,
-        header="",
-        body=translate_text("Service Categories:", session.lang),
-        footer="",
-        button=translate_text("Select Service", session.lang),
-        sections=sections
+        to, header="", body=translate_text(f"{group_label} Categories:", session.lang),
+        footer="", button=translate_text("Select Category", session.lang), sections=sections,
     )
 
 # ── Category Menu & Pagination ───────────────────────────────────────────
 def send_category_menu(to: str, session: UserSession, page: int = 0):
-    """
-    Paginated category menu (max 10 rows per message).
-    Each page contains up to 7 categories + 3 utility options.
-    """
-    page_size = 7
-    start = page * page_size
-    end = start + page_size
-    page_cats = CATEGORIES[start:end]
-    total_pages = (len(CATEGORIES) + page_size - 1) // page_size
-
-    rows = []
-    # 1. Add categories
-    for cat in page_cats:
-        clean = cat.replace(" ", "_").replace("&", "n")[:20]
-        cat_t = translate_text(cat, session.lang)
-        rows.append({
-            "id": f"cat_{clean}",
-            "title": safe_truncate(cat_t, 24)
-        })
-
-    option_rows = []
-    
-    # Strict IVR mode intentionally has no free-text category prediction.
-    # Add Previous and Next page navigation.
-    if page > 0:
-        option_rows.append({
-            "id": f"cat_page_{page-1}",
-            "title": safe_truncate(translate_text("⬅️ Previous", session.lang), 24)
-        })
-    else:
-        # If no previous page, add "Change Language" instead to consume a slot
-        option_rows.append({
-            "id": "cat_change_lang",
-            "title": safe_truncate(translate_text("🌍 Language", session.lang), 24)
-        })
-
-    if end < len(CATEGORIES):
-        option_rows.append({
-            "id": f"cat_page_{page+1}",
-            "title": safe_truncate(translate_text("➡️ Next Options", session.lang), 24)
-        })
-    elif page > 0 and len(option_rows) < 3:
-        # If it's the last page, we can show "Change Language" to fill the empty slot
-        option_rows.append({
-            "id": "cat_change_lang",
-            "title": safe_truncate(translate_text("🌍 Language", session.lang), 24)
-        })
-
-    header_t = safe_truncate(translate_text(f"Categories ({page+1}/{total_pages}) 📂", session.lang), 60)
-    body_t = safe_truncate(translate_text("Choose a complaint category, or describe your issue for smart matching:", session.lang), 1024)
-    footer_t = safe_truncate(translate_text("Select an option", session.lang), 60)
-    button_t = safe_truncate(translate_text("Choose Category", session.lang), 20)
-
-    send_interactive_list(
-        to,
-        header=header_t,
-        body=body_t,
-        footer=footer_t,
-        button=button_t,
-        sections=[
-            {"title": safe_truncate(translate_text("Categories", session.lang), 24), "rows": rows},
-            {"title": safe_truncate(translate_text("More Options", session.lang), 24), "rows": option_rows},
-        ]
-    )
+    send_group_menu(to, session, session.selected_group_id or "other", page)
 
 def send_all_categories_paginated(to: str, page: int = 0):
     # This function is deprecated and routes back to send_category_menu.
@@ -638,26 +549,31 @@ def send_predicted_categories(to: str, predictions: list, session: UserSession):
 FAQ_PAGE_SIZE = 6
 
 
-def send_faq_list(to: str, category: str, session: UserSession, page: int = 0):
+def send_faq_list(to: str, category_id: str, session: UserSession, page: int = 0):
     """Send FAQ questions for a category as a paginated interactive list.
 
     Always shows 'Directly File a Complaint' and 'Back', plus Prev/Next
     navigation when more questions exist for the same category.
     """
-    questions = get_questions_for_category(category)
+    category = IVR_CONFIG.categories_by_id.get(category_id)
+    if not category:
+        send_main_category_menu(to, session)
+        return
+    faqs = IVR_CONFIG.faqs(category_id)
 
-    total_pages = max(1, (len(questions) + FAQ_PAGE_SIZE - 1) // FAQ_PAGE_SIZE)
+    total_pages = max(1, (len(faqs) + FAQ_PAGE_SIZE - 1) // FAQ_PAGE_SIZE)
     page = max(0, min(page, total_pages - 1))
     start = page * FAQ_PAGE_SIZE
     end = start + FAQ_PAGE_SIZE
-    page_qs = questions[start:end]
+    page_faqs = faqs[start:end]
 
     q_rows = []
-    for i, q in enumerate(page_qs):
+    for i, faq in enumerate(page_faqs):
         q_idx = start + i
+        q = IVR_CONFIG.text(faq["question"])
         q_trans = translate_text(q, session.lang)
         q_rows.append({
-            "id": f"faq_{q_idx}",
+            "id": f"ivr_faq_{faq['id']}",
             "title": f"FAQ {q_idx + 1}",
             "description": safe_truncate(q_trans, 72)
         })
@@ -665,13 +581,13 @@ def send_faq_list(to: str, category: str, session: UserSession, page: int = 0):
     opt_rows = []
     if page > 0:
         opt_rows.append({
-            "id": f"faq_page_{page - 1}",
+            "id": f"ivr_faq_page_{category_id}_{page - 1}",
             "title": safe_truncate(translate_text("⬅️ Previous", session.lang), 24),
             "description": safe_truncate(translate_text("Previous questions", session.lang), 72)
         })
-    if end < len(questions):
+    if end < len(faqs):
         opt_rows.append({
-            "id": f"faq_page_{page + 1}",
+            "id": f"ivr_faq_page_{category_id}_{page + 1}",
             "title": safe_truncate(translate_text("➡️ Next", session.lang), 24),
             "description": safe_truncate(translate_text("More questions", session.lang), 72)
         })
@@ -688,7 +604,7 @@ def send_faq_list(to: str, category: str, session: UserSession, page: int = 0):
         "description": safe_truncate(translate_text("Return to category menu", session.lang), 72)
     })
 
-    cat_t = translate_text(category, session.lang)
+    cat_t = translate_text(IVR_CONFIG.text(category["label"]), session.lang)
     header_t = safe_truncate(f"{cat_t[:40]} FAQ ({page + 1}/{total_pages}) ❓", 60)
     send_interactive_list(
         to,
@@ -770,33 +686,6 @@ def send_edit_field_list(to: str, session: UserSession):
         button=safe_truncate(translate_text("Choose Field", session.lang), 20),
         sections=[{"title": safe_truncate(translate_text("Fields", session.lang), 24), "rows": rows}]
     )
-
-
-# ── Category ID Resolution ─────────────────────────────────────────────
-def resolve_category_from_id(selected_id: str) -> str:
-    """Convert a cat_XYZ interactive ID back to a (display) category name.
-
-    Looks first in the canonical CATEGORIES list (from qna_data.json), then
-    falls back to the Product/Service display labels so menu picks like
-    "Automobile" or "Airline" resolve correctly even though the FAQ data
-    uses different canonical names ("Vehicle", "Airlines", etc.).
-    """
-    cat_key = selected_id[4:]  # strip the "cat_" prefix
-
-    def _slug(name: str) -> str:
-        return name.replace(" ", "_").replace("&", "n")[:20]
-
-    # 1. Canonical FAQ categories
-    for cat in CATEGORIES:
-        if _slug(cat) == cat_key:
-            return cat
-
-    # 2. Product / Service display labels (mapped to FAQ category later)
-    for cat in PRODUCT_CATEGORIES + SERVICE_CATEGORIES:
-        if _slug(cat) == cat_key:
-            return cat
-
-    return None
 
 
 # ════════════════════════════════════════════════════════════════════════
@@ -1086,10 +975,7 @@ def handle_interactive(sender: str, selected_id: str, selected_title: str,
         return
 
     if ANSWER_CONFIG.mode == "RAG" and selected_id == "rag_contact":
-        contact = (
-            "For more information, call 18002330332 (Mon-Fri, 10:30 AM to 5:30 PM) "
-            "or email complaints@cercindia.org."
-        )
+        contact = "For more information:\n" + ivr_support_text()
         send_whatsapp_message(sender, translate_text(contact, session.lang))
         send_rag_question_prompt(sender, session)
         return
@@ -1100,6 +986,17 @@ def handle_interactive(sender: str, selected_id: str, selected_title: str,
         return
 
     # ── Main Menu Selections ────────────────────────────────────────
+    if selected_id.startswith("ivr_group_page_"):
+        remainder = selected_id[len("ivr_group_page_"):]
+        group_id, page_text = remainder.rsplit("_", 1)
+        send_group_menu(sender, session, group_id, int(page_text))
+        return
+
+    if selected_id.startswith("ivr_group_"):
+        group_id = selected_id[len("ivr_group_"):]
+        send_group_menu(sender, session, group_id)
+        return
+
     if selected_id == "menu_product":
         session.state = PRODUCT_MENU
         send_product_menu(sender, session)
@@ -1147,6 +1044,20 @@ def handle_interactive(sender: str, selected_id: str, selected_title: str,
         return
 
     # ── Category Selection ──────────────────────────────────────────
+    if selected_id.startswith("ivr_cat_"):
+        category_id = selected_id[len("ivr_cat_"):]
+        category = IVR_CONFIG.categories_by_id.get(category_id)
+        if not category or not category.get("enabled"):
+            send_group_menu(sender, session, session.selected_group_id or "other")
+            return
+        session.selected_category_id = category_id
+        session.selected_group_id = IVR_CONFIG.category_group[category_id]
+        session.category = IVR_CONFIG.text(category["label"])
+        session.state = FAQ_LIST
+        send_whatsapp_message(sender, translate_text(f"📂 Category: *{session.category}*", session.lang))
+        send_faq_list(sender, category_id, session)
+        return
+
     if selected_id == "cat_show_all":
         session.state = CATEGORY_MENU
         send_category_menu(sender, session)
@@ -1170,20 +1081,9 @@ def handle_interactive(sender: str, selected_id: str, selected_title: str,
         return
 
     if selected_id.startswith("cat_"):
-        category = resolve_category_from_id(selected_id)
-        if category:
-            # Show friendly display name, but use canonical key for FAQ lookups
-            display_name = category
-            data_category = resolve_data_category(category)
-            session.category = data_category
-            session.state = FAQ_LIST
-            send_whatsapp_message(sender, translate_text(f"📂 Category: *{display_name}*", session.lang))
-            send_faq_list(sender, data_category, session)
-        else:
-            send_whatsapp_message(sender, translate_text(f"Category selected: *{selected_title}*", session.lang))
-            session.category = selected_title
-            session.state = FAQ_LIST
-            send_faq_list(sender, selected_title, session)
+        # Stale callback from the pre-configurable IVR release.
+        session.state = MAIN_CATEGORY_MENU
+        send_main_category_menu(sender, session)
         return
 
     # ── FAQ Question Selection ──────────────────────────────────────
@@ -1194,13 +1094,37 @@ def handle_interactive(sender: str, selected_id: str, selected_title: str,
         return
 
     if selected_id == "faq_back":
-        session.state = MAIN_CATEGORY_MENU
-        send_main_category_menu(sender, session)
+        send_group_menu(sender, session, session.selected_group_id or "other")
+        return
+
+    if selected_id.startswith("ivr_faq_page_"):
+        remainder = selected_id[len("ivr_faq_page_"):]
+        category_id, page_text = remainder.rsplit("_", 1)
+        send_faq_list(sender, category_id, session, page=int(page_text))
+        return
+
+    if selected_id.startswith("ivr_faq_"):
+        faq_id = selected_id[len("ivr_faq_"):]
+        faq = IVR_CONFIG.faqs_by_id.get(faq_id)
+        category_id = session.selected_category_id
+        if not faq or not category_id or faq not in IVR_CONFIG.faqs(category_id):
+            send_group_menu(sender, session, session.selected_group_id or "other")
+            return
+        question = IVR_CONFIG.text(faq["question"])
+        answer = format_ivr_answer(question, IVR_CONFIG.text(faq["answer"]))
+        session.selected_question = question
+        send_whatsapp_message(sender, translate_text(answer, session.lang))
+        session.state = FAQ_ANSWER
+        send_interactive_buttons(sender, translate_text("Was this helpful?", session.lang), [
+            ("ans_need_more", safe_truncate(translate_text("ℹ️ Need more info", session.lang), 20)),
+            ("ans_file", safe_truncate(translate_text("📝 File Complaint", session.lang), 20)),
+            ("ans_back", safe_truncate(translate_text("🔙 Back", session.lang), 20)),
+        ])
         return
 
     if selected_id.startswith("faq_page_"):
         page = int(selected_id.split("_")[-1])
-        send_faq_list(sender, session.category, session, page=page)
+        send_faq_list(sender, session.selected_category_id, session, page=page)
         return
 
     if selected_id == "faq_file_complaint":
@@ -1232,11 +1156,7 @@ def handle_interactive(sender: str, selected_id: str, selected_title: str,
 
     # ── FAQ Answer actions ──────────────────────────────────────────
     if selected_id == "ans_need_more":
-        more_info_msg = (
-            "For more information, you can call us on our helpline number "
-            "18002330332 (Mon-Fri, 10:30 AM to 5:30 PM) or email us at "
-            "complaints@cercindia.org."
-        )
+        more_info_msg = "For more information:\n" + ivr_support_text()
         send_whatsapp_message(sender, translate_text(more_info_msg, session.lang))
         session.state = CONFIRMED
         return
@@ -1260,7 +1180,7 @@ def handle_interactive(sender: str, selected_id: str, selected_title: str,
 
     if selected_id == "ans_back":
         session.state = FAQ_LIST
-        send_faq_list(sender, session.category, session)
+        send_faq_list(sender, session.selected_category_id, session)
         return
 
     # ── Skip Button Handlers ────────────────────────────────────────
@@ -1285,12 +1205,12 @@ def handle_interactive(sender: str, selected_id: str, selected_title: str,
     # ── Confirm / Edit ──────────────────────────────────────────────
     if selected_id == "action_confirm":
         ticket_id = session.generate_ticket_id()
+        support_text = ivr_support_text()
         msg = (
             f"🎉 *Complaint Filed Successfully!*\n\n"
             f"🎫 Your Ticket ID: *{ticket_id}*\n\n"
             f"We will review your complaint and get back to you.\n"
-            f"📞 Helpline: 18002330332 (Mon-Fri, 10:30 AM to 5:30 PM)\n"
-            f"📧 Email: complaints@cercindia.org\n\n"
+            f"{support_text}\n\n"
             f"Thank you for using CERC Support! 🙏"
         )
         send_whatsapp_message(sender, translate_text(msg, session.lang))
@@ -1390,6 +1310,13 @@ def health_check_monitor():
     if ANSWER_CONFIG.mode == "RAG":
         payload["index_version"] = RAG_SERVICE.index_version if RAG_SERVICE else "unknown"
         payload["rag_ready"] = bool(RAG_SERVICE and RAG_SERVICE.ready)
+    else:
+        payload["ivr_ready"] = True
+        payload["ivr_schema_version"] = IVR_CONFIG.schema_version
+        payload["ivr_config_version"] = IVR_CONFIG.config_version
+        payload["ivr_groups"] = len(IVR_CONFIG.groups())
+        payload["ivr_categories"] = len(IVR_CONFIG.categories_by_id)
+        payload["ivr_faqs"] = len(IVR_CONFIG.faqs_by_id)
     return jsonify(payload), status_code
 
 

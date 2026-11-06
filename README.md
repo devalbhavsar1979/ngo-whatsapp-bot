@@ -39,7 +39,9 @@ install its additional dependencies with `python -m pip install -r requirements-
 
 - `app.py`: Flask routes, WhatsApp webhook handling, and conversation flow
 - `state_machine.py`: in-memory conversation/session state
-- `complaint_data.py` and `qna_data.json`: strict IVR FAQ/category data
+- `ivr_config.json`: configurable IVR groups, categories, FAQs, actions, and support details
+- `ivr_config.py`: startup validation and stable-ID lookups for the IVR configuration
+- `migrate_ivr_config.py`: deterministic legacy `qna_data.json` migration/parity utility
 - `answer_config.py` and `rag_service.py`: mode configuration and grounded RAG answers
 - `embedding_provider.py`: packaged/local FastEmbed model adapter for serverless runtime
 - `ingest.py`: controlled remote PDF/website ingestion into a packaged FAISS index

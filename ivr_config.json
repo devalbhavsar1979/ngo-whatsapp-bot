@@ -1,0 +1,2586 @@
+{
+  "schema_version": "1.0",
+  "config_version": "2026-11-06.1",
+  "default_language": "en",
+  "supported_languages": [
+    "en",
+    "hi",
+    "gu",
+    "mr"
+  ],
+  "main_menu": {
+    "prompt": {
+      "en": "Select a category type:"
+    },
+    "groups": [
+      {
+        "id": "products",
+        "label": {
+          "en": "Products"
+        },
+        "icon": "📦",
+        "order": 10,
+        "enabled": true,
+        "categories": [
+          {
+            "id": "vehicle",
+            "label": {
+              "en": "Automobile"
+            },
+            "data_name": "Vehicle",
+            "order": 10,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "vehicle_faq_001",
+                "question": {
+                  "en": "The service centre has charged a higher amount than the estimate. What should I do?"
+                },
+                "answer": {
+                  "en": "If the service centre has charged more than the approved estimate:\nAsk for a detailed bill with item-wise breakup.\nCheck whether your prior approval was taken for additional repairs.\nIf no consent was given, you can:\nSend a written complaint to the service centre.\nEscalate to the manufacturer’s customer care.\nFile a complaint before the District Consumer Commission for deficiency in service."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "vehicle_faq_002",
+                "question": {
+                  "en": "The vehicle problem is not resolved even after servicing. What remedy is available?"
+                },
+                "answer": {
+                  "en": "If the same issue continues:\nImmediately inform the service centre in writing.\nKeep copies of job cards and invoices.\nAsk for free re-inspection if the issue relates to the previous service.\nIf negligence is found, you may claim:\nFree repair\nRefund of service charges\nCompensation for inconvenience\nComplaint before Consumer Commission"
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "vehicle_faq_003",
+                "question": {
+                  "en": "The service centre replaced parts without my permission. What can I do?"
+                },
+                "answer": {
+                  "en": "Replacement of parts without customer approval amounts to unfair practice.\nDemand written explanation.\nRefuse payment for unauthorized work.\nEscalate to company head office.\nFile complaint for refund and compensation if required."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "vehicle_faq_004",
+                "question": {
+                  "en": "My vehicle was damaged while at the service centre. Who is responsible?"
+                },
+                "answer": {
+                  "en": "The service centre is responsible for the safety of your vehicle while in their custody.\nTake photographs of the damage.\nMention damage on delivery receipt before signing.\nFile written complaint immediately.\nClaim repair cost or compensation.\nApproach Consumer Commission if not resolved."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "vehicle_faq_005",
+                "question": {
+                  "en": "Delay in delivery of vehicle after service. What can be done?"
+                },
+                "answer": {
+                  "en": "If the service centre delays delivery without valid reason:\nAsk for written explanation.\nRequest compensation for delay (especially if vehicle is commercial).\nSend legal notice if delay is unreasonable.\nFile complaint for deficiency of service."
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "vehicle_faq_006",
+                "question": {
+                  "en": "The service centre is not honouring warranty. What remedy is available?"
+                },
+                "answer": {
+                  "en": "If warranty is wrongly denied:\nCheck warranty terms and service records.\nObtain written reason for rejection.\nEscalate to manufacturer.\nFile complaint before Consumer Commission for:\nFree replacement/repair\nCompensation"
+                },
+                "order": 60,
+                "enabled": true
+              },
+              {
+                "id": "vehicle_faq_007",
+                "question": {
+                  "en": "They are forcing me to buy additional products during service. Is it legal?"
+                },
+                "answer": {
+                  "en": "No. Forcing customers to buy:\nAccessories, Extended warranty, Add-on services is considered unfair trade practice.\nYou can refuse and complain to:\nManufacturer\nConsumer Helpline (National Consumer Helpline – 1915)\nDistrict Consumer Commission"
+                },
+                "order": 70,
+                "enabled": true
+              },
+              {
+                "id": "vehicle_faq_008",
+                "question": {
+                  "en": "What documents should I keep for filing complaint?"
+                },
+                "answer": {
+                  "en": "Keep copies of:\nJob card, Estimate, Final invoice, Payment receipt, Warranty card, Photos of defect/damage,Written communication with service centre"
+                },
+                "order": 80,
+                "enabled": true
+              },
+              {
+                "id": "vehicle_faq_009",
+                "question": {
+                  "en": "Where can I file complaint?"
+                },
+                "answer": {
+                  "en": "You may file complaint at:\nDistrict Consumer Disputes Redressal Commission\n(Jurisdiction: Where you reside or where service centre is located)\nYou can also file complaint online at:\nE-Daakhil portal (consumer complaint filing system)"
+                },
+                "order": 90,
+                "enabled": true
+              },
+              {
+                "id": "vehicle_faq_010",
+                "question": {
+                  "en": "What compensation can be claimed?"
+                },
+                "answer": {
+                  "en": "You may claim:  Refund of excess charges, Repair cost, Replacement of defective parts, Compensation for mental harassment, Litigation cost"
+                },
+                "order": 100,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "electrical_electronic_app",
+            "label": {
+              "en": "Electrical Home Appliances"
+            },
+            "data_name": "Electrical & Electronic App.",
+            "order": 20,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "electrical_electronic_app_faq_001",
+                "question": {
+                  "en": "Product is under warranty but service dealer is not giving proper service"
+                },
+                "answer": {
+                  "en": "This is with reference to your complaint regarding non-providing of proper service during the warranty period.\nIf the product is under valid warranty, the manufacturer/company is legally bound to repair or replace the defective product free of cost as per the warranty terms. Denial of proper service amounts to deficiency in service under the Consumer Protection Act.\nYou are advised to:\n1. Lodge a written complaint to the company’s customer care and service head.\n2. Keep copies of warranty card, invoice, and service job sheets.\n3. If the issue is not resolved within reasonable time (15–30 days), you may issue a legal notice.\n4. You may file a complaint before the District Consumer Commission seeking repair/replacement/refund and compensation.\nWe can assist you further in drafting notice or filing complaint if required."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "electrical_electronic_app_faq_002",
+                "question": {
+                  "en": "Product purchased one week ago but not working"
+                },
+                "answer": {
+                  "en": "Since the product has failed within a very short period of purchase, it indicates possible manufacturing defect.\nYou are entitled to:\nImmediate replacement of the product, OR Refund of the amount paid OR Free repair\nPlease immediately inform the seller and manufacturer in writing with copy of invoice and photographs/video of defect. If they refuse replacement or refund, it amounts to deficiency in service and unfair trade practice.\nYou may approach the Consumer Commission if the matter is not resolved amicably."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "electrical_electronic_app_faq_003",
+                "question": {
+                  "en": "Product received in damaged condition"
+                },
+                "answer": {
+                  "en": "Reply:\nIf the product was delivered in damaged condition, the seller/delivery partner is responsible.\nYou are advised to:\n1. Inform the seller immediately (preferably within 24–48 hours of delivery).\n2. Share photographs and unboxing video (if available).\n3. Request replacement or refund in writing.\nIf the seller refuses, you may file complaint before Consumer Commission claiming refund, replacement and compensation."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "electrical_electronic_app_faq_004",
+                "question": {
+                  "en": "Product under warranty but company says parts are not available"
+                },
+                "answer": {
+                  "en": "Reply:\nNon-availability of spare parts during the warranty period is not a valid ground to deny service. The company is responsible to repair or replace the product within reasonable time.\nYou may:\nDemand replacement if repair is not possible.\nSeek refund if the company fails to resolve the issue.\nIssue written notice demanding resolution within 15 days.\nFailure to provide service due to non-availability of parts amounts to deficiency in service."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "electrical_electronic_app_faq_005",
+                "question": {
+                  "en": "RO System not working though AMC taken, service not provided"
+                },
+                "answer": {
+                  "en": "Reply:\nIf you have paid for Annual Maintenance Contract (AMC), the service provider is contractually bound to provide periodic maintenance and repairs as per agreement.\nNon-providing of AMC services is deficiency in service.\nPlease:\n1. Send written complaint referring to AMC agreement.\n2. Demand immediate service or refund of AMC charges.\n3. Preserve AMC receipt and agreement copy.\nIf no action is taken, you may file consumer complaint seeking refund of AMC amount, compensation and cost of litigation."
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "electrical_electronic_app_faq_006",
+                "question": {
+                  "en": "Product repaired 3–4 times but still not working (Manufacturing defect)"
+                },
+                "answer": {
+                  "en": "Repeated repairs within warranty period indicate inherent manufacturing defect.\nIn such cases, consumer is entitled to:\nReplacement of product with new one, OR\nFull refund of purchase amount, OR\nCompensation for inconvenience and harassment.\nYou should demand replacement/refund in writing. Attach copies of service reports/job sheets as proof of repeated repairs.\nIf the company fails to comply, you may approach the Consumer Commission claiming replacement/refund and compensation."
+                },
+                "order": 60,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "solar_panel",
+            "label": {
+              "en": "Solar Panel"
+            },
+            "data_name": "Solar Panel",
+            "order": 30,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "solar_panel_faq_001",
+                "question": {
+                  "en": "Poor Installation or Defective Equipment"
+                },
+                "answer": {
+                  "en": "If the solar panels, inverter, or wiring are defective or improperly installed, you are entitled to proper repair, replacement, or rectification without additional cost, as per warranty terms and consumer protection laws."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "solar_panel_faq_002",
+                "question": {
+                  "en": "Lower Electricity Generation than Promised"
+                },
+                "answer": {
+                  "en": "If the system is not generating the promised units or savings, you may request a performance audit report from the company and claim compensation if there is a deficiency in service or misrepresentation."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "solar_panel_faq_003",
+                "question": {
+                  "en": "False Promises or Misleading Information"
+                },
+                "answer": {
+                  "en": "In case of false assurances regarding subsidy, savings, or warranty, such acts may amount to unfair trade practice. You may demand correction, refund, or compensation."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "solar_panel_faq_004",
+                "question": {
+                  "en": "Delay in Installation or After-Sales Service"
+                },
+                "answer": {
+                  "en": "Unreasonable delay in installation or lack of service support is considered a deficiency in service. You are entitled to timely completion and proper after-sales support."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "solar_panel_faq_005",
+                "question": {
+                  "en": "Non-Issuance of Bill or Warranty Documents"
+                },
+                "answer": {
+                  "en": "Unreasonable delay in installation or lack of service support is considered a deficiency in service. You are entitled to timely completion and proper after-sales support."
+                },
+                "order": 50,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "mobile_handset",
+            "label": {
+              "en": "Mobile Handset & Electronics"
+            },
+            "data_name": "Mobile Handset",
+            "order": 40,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "mobile_handset_faq_001",
+                "question": {
+                  "en": "Newly purchased mobile is not working properly."
+                },
+                "answer": {
+                  "en": "If the mobile handset is not functioning properly soon after purchase (such as battery issues, hanging problem, heating, network failure, etc.), you should:\n1. Immediately inform the seller and the authorized service center.\n2. Do not delay, as early complaints help establish a manufacturing defect.\n3. Keep invoice, warranty card, and original packaging safely.\nIf the defect is within a short period of purchase (usually 7–15 days depending on company policy), you may request:\nReplacement of the handset, or Refund (if defect is major), or Free repair under warranty.\nIf the seller refuses to cooperate, you may:\nSend a written complaint to the company’s customer care.\nFile a complaint before the District Consumer Disputes Redressal Commission under the Consumer Protection Act, 2019."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "mobile_handset_faq_002",
+                "question": {
+                  "en": "Mobile handset is under warranty but service dealer is not repairing the handset."
+                },
+                "answer": {
+                  "en": "If your mobile phone is within the warranty period and the authorized service center is refusing to repair it:\n1. Confirm that the issue is covered under warranty (physical damage, water damage, etc., are usually excluded).\n2. Obtain a written job sheet or refusal note from the service center.\n3. Lodge a complaint with the company’s official customer care.\nIf the company fails to resolve the issue:\nSend a legal notice to the company.\nFile a complaint before the District Consumer Commission for:\nFree repair or replacement, Refund (if repair is not possible)\nCompensation for harassment and mental agony\nNon-repair during the warranty period amounts to deficiency in service under consumer law."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "mobile_handset_faq_003",
+                "question": {
+                  "en": "Mobile handset was purchased and when opened the box, handset is defective."
+                },
+                "answer": {
+                  "en": "If the handset is found defective immediately after opening the sealed box:\n1. Do not use the phone further.\n2. Immediately inform the seller (preferably on the same day).\n3. Record video/photo evidence of unboxing (if available).\n4. Keep invoice and box intact.\nYou are entitled to:\nImmediate replacement, or Refund, if the product is defective at the time of delivery.\nIf the seller refuses to replace it claiming company policy:\nLodge complaint with the brand’s customer care.\nIf not resolved, file a complaint before the Consumer Commission.\nSelling a defective product amounts to unfair trade practice and deficiency in service."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "mobile_handset_faq_004",
+                "question": {
+                  "en": "Deductions from prepaid account balance of Idea card without any information. What can be the reason?"
+                },
+                "answer": {
+                  "en": "Possible Reasons:\nActivation of Value Added Services (VAS) such as caller tunes, games, astrology, etc.\nInternet data usage when data pack is not active.\nRenewal of previously activated packs.\nBackground app usage consuming chargeable data.\nPremium SMS or third-party service subscription.\nWhat the consumer should do:\n1        Check balance deduction details through: Customer care number 199 (complaint), Mobile app of the operator.\n2        Ask for a detailed deduction statement.\n3        Immediately request deactivation of any VAS.\n4        If deduction is unauthorized, demand refund within 24–48 hours.\nIf not resolved, escalate to:\nNodal Officer of the telecom company.\nFile complaint on Sanchar Saathi / Telecom grievance portal.\nApproach Consumer Commission if refund is not given."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "mobile_handset_faq_005",
+                "question": {
+                  "en": "Arbitrary deduction towards Value Added Services (VAS) which were never activated. What can be done?"
+                },
+                "answer": {
+                  "en": "If VAS was never activated by the consumer:\n1. Send STOP message (if applicable) or call 155223 to deactivate VAS.\n2. Lodge complaint with customer care and obtain complaint number.\n3. Demand refund of deducted amount.\n4. Ask for proof of activation (SMS consent/OTP record).\nIf company fails to refund:\nEscalate to Nodal Officer.\nLodge complaint before Consumer Commission for deficiency in service."
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "mobile_handset_faq_006",
+                "question": {
+                  "en": "Recharge was done but amount was not credited in SIM card. What to do?"
+                },
+                "answer": {
+                  "en": "Whether recharge was successful (bank statement / UPI reference).\nWhether recharge was done on correct number.\nWhether transaction is “pending” or “failed”.\nAction:\n1. Contact recharge retailer/app immediately with transaction ID.\n2. Call telecom customer care and provide recharge reference number.\n3. If amount deducted from bank but recharge failed, it should be reversed within 3–7 working days.\n4. If not refunded, send written complaint to service provider and bank/payment app.\nIf still unresolved, file complaint before Consumer Commission with proof of payment."
+                },
+                "order": 60,
+                "enabled": true
+              },
+              {
+                "id": "mobile_handset_faq_007",
+                "question": {
+                  "en": "SIM card was blocked without any intimation. What to do?"
+                },
+                "answer": {
+                  "en": "Non-usage for long period, KYC not updated, Outstanding dues (postpaid).\nSuspected misuse.\n1. Visit nearest service centre with valid ID proof.\n2. Check KYC status.\n3. Apply for SIM reactivation (if number not permanently disconnected).\n4. If number allotted to another person without notice, demand explanation in writing.\nIf blocked without valid reason, it amounts to deficiency in service, and complaint can be filed before Consumer Commission."
+                },
+                "order": 70,
+                "enabled": true
+              },
+              {
+                "id": "mobile_handset_faq_008",
+                "question": {
+                  "en": "Scheme/benefits not received as per recharge done. What to do?"
+                },
+                "answer": {
+                  "en": "Example: Data/validity/talktime not credited as advertised.\n1. Take screenshot of recharge offer.\n2. Call customer care and lodge complaint.\n3. Ask for activation of correct plan or refund of difference.\n4. Keep complaint reference number.\nIf company refuses to honour advertised plan, complaint can be filed for:\nUnfair trade practice, Deficiency in service"
+                },
+                "order": 80,
+                "enabled": true
+              },
+              {
+                "id": "mobile_handset_faq_009",
+                "question": {
+                  "en": "By mistake recharge was done in another person’s SIM card. What to do?"
+                },
+                "answer": {
+                  "en": "Generally, telecom companies do not reverse recharge once successfully credited.\n1. Immediately contact customer care and request reversal.\n2. If recharge was done through retailer, inform retailer immediately.\n3. If other person cooperates, request them to transfer balance (if facility available).\n4. If payment app error occurred, raise dispute with app.\nNote: If wrong number was entered by consumer, refund is usually not allowed. But if technical/system error occurred, company must investigate and refund.\nEscalation Procedure (For All Mobile Complaints)\n1. Customer Care Complaint\n2. Nodal Officer Complaint (after 3 days if unresolved)\n3. Appeal to Appellate Authority\n4. Approach Consumer Disputes Redressal Commission"
+                },
+                "order": 90,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "e_commerce",
+            "label": {
+              "en": "E- Commerce"
+            },
+            "data_name": "E commerce",
+            "order": 50,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "e_commerce_faq_001",
+                "question": {
+                  "en": "Online Order Placed – Payment Made – Item Not Received"
+                },
+                "answer": {
+                  "en": "If you have placed an order online and made payment but the item has not been delivered:\nFirst check the order status in your account.\nContact the customer care of the e-commerce company in writing (email/app chat).\nKeep screenshots of payment confirmation, order ID, and transaction details.\nIf the seller fails to deliver within the promised time, it amounts to deficiency in service under the Consumer Protection Act, 2019.\nYou may send a written notice to the company demanding delivery or refund.\nIf not resolved, you can file a complaint before the District Consumer Commission having jurisdiction."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "e_commerce_faq_002",
+                "question": {
+                  "en": "Order Placed Through Instagram – Product Received Not as Per Order / Poor Quality"
+                },
+                "answer": {
+                  "en": "Many sellers operate through social media platforms like Instagram.\nIf the product received is not as shown or is of poor quality:\nPreserve screenshots of product advertisement and chats.\nTake photos/videos of the received product.\nImmediately inform the seller in writing and request replacement/refund.\nIf no response, send a legal notice.\nSuch acts may amount to unfair trade practice under the Consumer Protection Act, 2019.\nYou may file a complaint against the seller (if identifiable) before the Consumer Commission."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "e_commerce_faq_003",
+                "question": {
+                  "en": "Order Cancelled by Seller – Refund Not Given"
+                },
+                "answer": {
+                  "en": "If the seller cancels the order but does not refund the amount:\nKeep cancellation message/email proof.\nCheck refund policy and timeline.\nWrite to customer support demanding refund within a specified time.\nIf payment gateway was used, raise a dispute with the bank/payment provider.\nNon-refund of amount is a deficiency in service under the Consumer Protection Act, 2019.\nYou may initiate consumer complaint proceedings."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "e_commerce_faq_004",
+                "question": {
+                  "en": "Returned Item (Not as Per Order) – Refund Not Received"
+                },
+                "answer": {
+                  "en": "If you returned the product but refund is pending:\nKeep courier receipt and return tracking proof.\nKeep acknowledgment from seller confirming return.\nSend written reminder requesting refund.\nIf seller fails to refund within reasonable time, you may file complaint for recovery of amount with compensation under the Consumer Protection Act, 2019."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "e_commerce_faq_005",
+                "question": {
+                  "en": "Item Received in Damaged Condition"
+                },
+                "answer": {
+                  "en": "If the product is delivered in damaged condition:\nTake clear photos and video while opening the parcel (very important).\nInform seller immediately (within 24–48 hours).\nRequest replacement or refund.\nIf refused, it is deficiency in service under the Consumer Protection Act, 2019.\nYou may approach the Consumer Commission."
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "e_commerce_faq_006",
+                "question": {
+                  "en": "Instagram Order – Parcel Opened – Product Not as Per Order"
+                },
+                "answer": {
+                  "en": "If you ordered through Instagram and product differs from advertisement:\nPreserve advertisement screenshots.\nKeep proof of payment and delivery.\nSend written complaint to seller demanding refund/replacement.\nIf seller details are fake or unavailable, file cyber complaint at National Cyber Crime Portal (www.cybercrime.gov.in).\nYou may also file consumer complaint if seller details are available."
+                },
+                "order": 60,
+                "enabled": true
+              },
+              {
+                "id": "e_commerce_faq_007",
+                "question": {
+                  "en": "Order Placed Through Mobile – Item Received in Torn Condition"
+                },
+                "answer": {
+                  "en": "If the item received is torn or defective:\nTake photographs immediately.\nInform seller within the return period.\nAsk for replacement/refund.\nKeep courier packaging as proof.\nIf seller refuses, you may file complaint under the Consumer Protection Act, 2019."
+                },
+                "order": 70,
+                "enabled": true
+              },
+              {
+                "id": "e_commerce_faq_008",
+                "question": {
+                  "en": "Damaged Product Returned – No Replacement or Refund"
+                },
+                "answer": {
+                  "en": "If you returned damaged goods but no action taken:\nKeep courier receipt and tracking status.\nSend final written reminder giving 7–15 days’ time.\nIf still unresolved, you may:\nSend legal notice\nFile complaint before Consumer Commission\nClaim refund + compensation + litigation cost under the Consumer Protection Act, 2019."
+                },
+                "order": 80,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "weights_measures",
+            "label": {
+              "en": "Weight, Size & Description"
+            },
+            "data_name": "Weights & Measures",
+            "order": 60,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "weights_measures_faq_001",
+                "question": {
+                  "en": "Shopkeeper is charging more than MRP. What should I do?"
+                },
+                "answer": {
+                  "en": "It is illegal to charge more than the printed Maximum Retail Price (MRP).\nWhat you should do:\nAsk for proper bill/invoice, Take photo of product showing MRP.\nKeep payment proof, File complaint with:\nDistrict Legal Metrology Department\nConsumer Helpline (National Consumer Helpline – 1915)\nConsumer Commission (if required)\nYou can also file complaint under the Consumer Protection Act, 2019."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "weights_measures_faq_002",
+                "question": {
+                  "en": "The weighing machine at a shop seems incorrect. What can be done?"
+                },
+                "answer": {
+                  "en": "Every weighing instrument must:\nBe stamped & verified by Legal Metrology Department.\nDisplay valid verification seal/sticker.\nNot be tampered.\nIf you suspect cheating:\nNote shop name & address.\nTake photograph of weighing machine.\nFile complaint with Legal Metrology Inspector of your district."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "weights_measures_faq_003",
+                "question": {
+                  "en": "Mandatory Declarations on Packaged Goods"
+                },
+                "answer": {
+                  "en": "Every packaged commodity must contain:\nName & address of manufacturer/packer/importer\nNet quantity (weight/volume/number)\nMRP (inclusive of all taxes)\nDate of packing/manufacture\nCustomer care details\nIf any of these are missing, complaint can be filed."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "weights_measures_faq_004",
+                "question": {
+                  "en": "Can cinema halls sell products above MRP?"
+                },
+                "answer": {
+                  "en": "No. Pre-packaged items cannot be sold above printed MRP.\nHowever, freshly prepared food (like popcorn prepared there) is not covered under MRP rules."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "weights_measures_faq_005",
+                "question": {
+                  "en": "Petrol Pump – Less fuel delivered. What to do?"
+                },
+                "answer": {
+                  "en": "You have right to demand:\n5 litre or 10 litre test measure check.\nZero reading before filling.\nIf cheating is suspected:\nImmediately complain to pump manager.\nNote nozzle number & time.\nFile complaint with Legal Metrology Department"
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "weights_measures_faq_006",
+                "question": {
+                  "en": "Is re-packing allowed after changing MRP?"
+                },
+                "answer": {
+                  "en": "Re-sticking higher MRP label over old MRP is illegal unless permitted under law (like GST change with proper notification).\nIf you find double MRP sticker:\nTake photo evidence.\nFile complaint immediately."
+                },
+                "order": 60,
+                "enabled": true
+              },
+              {
+                "id": "weights_measures_faq_007",
+                "question": {
+                  "en": "What penalties can be imposed on traders?"
+                },
+                "answer": {
+                  "en": "Under the Legal Metrology Act, 2009:\nHeavy fines\nSeizure of goods\nCancellation of licence\nProsecution in court"
+                },
+                "order": 70,
+                "enabled": true
+              },
+              {
+                "id": "weights_measures_faq_008",
+                "question": {
+                  "en": "What documents should be kept for complaint?"
+                },
+                "answer": {
+                  "en": "Cash memo / Bill\nPhoto of product\nPhoto of weighing machine (if applicable)\nPayment proof\nWritten complaint copy"
+                },
+                "order": 80,
+                "enabled": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "services",
+        "label": {
+          "en": "Services"
+        },
+        "icon": "🛠️",
+        "order": 20,
+        "enabled": true,
+        "categories": [
+          {
+            "id": "airlines",
+            "label": {
+              "en": "Airline"
+            },
+            "data_name": "Airlines",
+            "order": 10,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "airlines_faq_001",
+                "question": {
+                  "en": "Cancelled Ticket Refund Not Received – What to Do?"
+                },
+                "answer": {
+                  "en": "If your airline ticket was cancelled and the refund has not been received, please follow these steps:\n1. Check the Refund Timeline\nAs per DGCA guidelines, airlines must refund:\nWithin 7 working days for credit/debit card payments\nImmediately or within airline policy time for UPI/wallets\nWithin 20 working days for cash/cheque payments\n2. Raise a Written Complaint with the Airline\nSubmit a complaint on the airline’s official website or customer care email.\nKeep the complaint reference number, ticket number (PNR), and proof of cancellation.\n3. Escalate to the Airline’s Nodal Officer\nIf no response within 30 days, escalate to the airline’s Nodal/Grievance Officer (details are available on the airline’s website).\n4. Approach Air Sewa / Consumer Forum\nFile a complaint on Air Sewa (Ministry of Civil Aviation) portal.\nIf still unresolved, you may approach the Consumer Commission for deficiency in service."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "airlines_faq_002",
+                "question": {
+                  "en": "Delay of Flight – What to Do?"
+                },
+                "answer": {
+                  "en": "In case of a flight delay, passengers have rights under DGCA Civil Aviation Requirements:\n1. Delay of More Than 2 Hours\nAirline must provide free meals and refreshments.\n2. Delay of More Than 6 Hours\nAirline must offer:\nAlternative flight OR\nFull refund if you choose not to travel.\n3. Delay Leading to Overnight Stay\nAirline must arrange hotel accommodation and transportation.\n4. Action Steps for Passenger\nAsk airline staff at the airport for written confirmation of delay.\nKeep boarding pass, ticket, and receipts.\nFile a complaint with the airline if facilities were not provided.\nEscalate to AirSewa / Consumer Forum if compensation or refund is denied."
+                },
+                "order": 20,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "banking_services",
+            "label": {
+              "en": "Banking (Credit Card, Investments, and loans)"
+            },
+            "data_name": "Banking Services",
+            "order": 20,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "banking_services_faq_001",
+                "question": {
+                  "en": "If the ticket was booked through a travel agent or online portal, the following applies:"
+                },
+                "answer": {
+                  "en": "1. Responsibility of Agent\nOnce the airline processes the refund, the agent is legally bound to pass the refund to the consumer without undue delay.\n2. Ask for Proof\nRequest the agent to provide:\nRefund status from airline, ARN / Refund Reference Number\n3. File Written Complaint Against Agent\nSend an email or written complaint demanding refund with a deadline.\nKeep all payment proofs and communication records.\n4. Escalation\nIf the agent fails to refund:\nFile complaint on Air,Sewa or\nFile complaint before Consumer Commission for unfair trade practice and deficiency in service"
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "banking_services_faq_002",
+                "question": {
+                  "en": "Bank is not issuing cheque book / passbook – What to do?"
+                },
+                "answer": {
+                  "en": "Submit a written request to the Branch Manager and take acknowledgment.\nIf no response within 7 working days, escalate to the Bank’s Grievance Redressal Officer.\nComplaint can also be filed through:\nBank’s official website grievance portal\nAs per RBI guidelines, banks cannot refuse cheque book/passbook without valid reason (except restricted/frozen accounts)."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "banking_services_faq_003",
+                "question": {
+                  "en": "Cheque deposited but amount not credited – What to do?"
+                },
+                "answer": {
+                  "en": "Verify cheque clearing status (local/outstation).\nNormally clearing takes:\nLocal cheque: 1–3 working days\nOutstation: Up to 7–10 days\nSubmit written complaint with deposit slip copy.\nIf delay beyond reasonable time, bank must pay interest for delay as per RBI norms.\nEscalate to RBI Ombudsman if unresolved within 30 days."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "banking_services_faq_004",
+                "question": {
+                  "en": "Bank charged non-maintenance of minimum balance charges – What to do?"
+                },
+                "answer": {
+                  "en": "Check account type (Savings/BSBDA/Salary/Jan Dhan).\nSome accounts (BSBDA/PMJDY) cannot be charged penalty.\nIf charges applied wrongly:\nGive written complaint.\nRequest reversal.\nIf unfair charges continue, escalate to RBI."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "banking_services_faq_005",
+                "question": {
+                  "en": "Amount debited but cash not received from ATM – What to do?"
+                },
+                "answer": {
+                  "en": "Lodge complaint immediately:\nDate, time, ATM location\nBank must resolve within 5 calendar days (as per RBI).\nIf not resolved in 5 days:\nBank must pay ₹100 per day compensation automatically.\nEscalate to RBI CMS if delayed."
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "banking_services_faq_006",
+                "question": {
+                  "en": "Delay in resolving ATM cash complaint"
+                },
+                "answer": {
+                  "en": "After 5 days, demand compensation ₹100 per day.\nSend written reminder.\nIf no resolution within 30 days, file complaint with RBI Ombudsman."
+                },
+                "order": 60,
+                "enabled": true
+              },
+              {
+                "id": "banking_services_faq_007",
+                "question": {
+                  "en": "Cheque dishonoured despite sufficient balance"
+                },
+                "answer": {
+                  "en": "Obtain written reason for dishonour.\nIf wrongful dishonour:\nBank is liable for compensation (loss of reputation, charges).\nSend legal notice if required.\nFile complaint with Banking Ombudsman."
+                },
+                "order": 70,
+                "enabled": true
+              },
+              {
+                "id": "banking_services_faq_008",
+                "question": {
+                  "en": "Credit card delivered but PIN not received"
+                },
+                "answer": {
+                  "en": "Contact customer care immediately.\nRequest PIN regeneration via:\nBranch visit\nIf card activated without consent, raise dispute immediately."
+                },
+                "order": 80,
+                "enabled": true
+              },
+              {
+                "id": "banking_services_faq_009",
+                "question": {
+                  "en": "Long waiting time (3 hours) for cash withdrawal due to staff negligence"
+                },
+                "answer": {
+                  "en": "Submit written complaint to Branch Manager.\nMention date, time, inconvenience caused.\nEscalate to Zonal Office if repeated.\nBank must provide basic banking services without unreasonable delay."
+                },
+                "order": 90,
+                "enabled": true
+              },
+              {
+                "id": "banking_services_faq_010",
+                "question": {
+                  "en": "Loan sanctioned but not disbursed"
+                },
+                "answer": {
+                  "en": "Ask for written reason for non-disbursement.\nCheck sanction letter terms.\nIf unjustified delay, escalate to higher authority.\nFile RBI complaint if bank is delaying without valid reason."
+                },
+                "order": 100,
+                "enabled": true
+              },
+              {
+                "id": "banking_services_faq_011",
+                "question": {
+                  "en": "ATM card blocked due to wrong PIN – What to do?"
+                },
+                "answer": {
+                  "en": "Visit branch with ID proof OR\nUse net banking/mobile banking to regenerate PIN.\nContact customer care to unblock card.\nIf permanently blocked, request new card issuance."
+                },
+                "order": 110,
+                "enabled": true
+              },
+              {
+                "id": "banking_services_faq_012",
+                "question": {
+                  "en": "Amount not credited and no proper reply from bank"
+                },
+                "answer": {
+                  "en": "Submit written complaint and take acknowledgment.\nBank must resolve within 30 days.\nIf no response, file complaint at RBI CMS Portal."
+                },
+                "order": 120,
+                "enabled": true
+              },
+              {
+                "id": "banking_services_faq_013",
+                "question": {
+                  "en": "Wrong charges deducted from Salary Account"
+                },
+                "answer": {
+                  "en": "Salary accounts generally have zero minimum balance requirement.\nSubmit complaint with salary proof.\nAsk for reversal of wrongful charges.\nEscalate to grievance cell if not resolved."
+                },
+                "order": 130,
+                "enabled": true
+              },
+              {
+                "id": "banking_services_faq_014",
+                "question": {
+                  "en": "Bank deducted amount and issued insurance policy without instruction"
+                },
+                "answer": {
+                  "en": "This is mis-selling.\nImmediately:\nSend written complaint to bank.\nInform insurance company.\nCancel policy within free-look period (15–30 days).\nDemand full refund.\nIf refused, complain to: RBI or  Consumer Organisation or Consumer Forum"
+                },
+                "order": 140,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "insurances_life_health_travel_motor_etc",
+            "label": {
+              "en": "Insurances (Life, Health, Travel, Motor, etc.)"
+            },
+            "data_name": "Insurances (Life, Health, Travel, Motor, etc.)",
+            "order": 30,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "insurances_life_health_travel_motor_etc_faq_001",
+                "question": {
+                  "en": "Insurance companies reject claims or take excessive time to process them."
+                },
+                "answer": {
+                  "en": "You may request a written explanation for the rejection or delay. If unsatisfied, you can escalate the matter to the insurer’s grievance cell and further to the Insurance Regulatory and Development Authority of India (IRDAI)."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "insurances_life_health_travel_motor_etc_faq_002",
+                "question": {
+                  "en": "Policy sold with false promises (high returns, full coverage, wrong benefits)."
+                },
+                "answer": {
+                  "en": "If you were misled, you can file a complaint within the \"free-look period\" (usually 15 days). If this period has passed, you may still raise a grievance citing misrepresentation."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "insurances_life_health_travel_motor_etc_faq_003",
+                "question": {
+                  "en": "Claims rejected alleging that the policyholder did not disclose medical history or facts."
+                },
+                "answer": {
+                  "en": "Ensure you had disclosed all material facts at the time of purchase. If you believe the rejection is unfair, submit supporting documents and escalate the complaint."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "insurances_life_health_travel_motor_etc_faq_004",
+                "question": {
+                  "en": "Delay in receiving policy documents, bond, or soft copy."
+                },
+                "answer": {
+                  "en": "You are entitled to receive policy documents within a reasonable time. Follow up with the insurer and lodge a formal complaint if delayed."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "insurances_life_health_travel_motor_etc_faq_005",
+                "question": {
+                  "en": "Premium paid but not updated , Policy lapsed without proper notice"
+                },
+                "answer": {
+                  "en": "Share payment proof with the insurer immediately. If unresolved, escalate to higher authorities or contact consumer organisation."
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "insurances_life_health_travel_motor_etc_faq_006",
+                "question": {
+                  "en": "Insurance company pays less than the claimed amount."
+                },
+                "answer": {
+                  "en": "Ask for a detailed settlement calculation. If discrepancies exist, file a grievance. Contact Consumer Organisation or File a complaint before the District Consumer Disputes Redressal Commission under the Consumer Protection Act, 2019"
+                },
+                "order": 60,
+                "enabled": true
+              },
+              {
+                "id": "insurances_life_health_travel_motor_etc_faq_007",
+                "question": {
+                  "en": "Cashless facility denied at hospital."
+                },
+                "answer": {
+                  "en": "You may proceed with reimbursement claim and later challenge the denial with proper documents."
+                },
+                "order": 70,
+                "enabled": true
+              },
+              {
+                "id": "insurances_life_health_travel_motor_etc_faq_008",
+                "question": {
+                  "en": "Insurance company delays payout after policy maturity."
+                },
+                "answer": {
+                  "en": "Submit a written complaint with policy details and demand payment with applicable interest for delay. If claim was not settled contact consumer organisation and file case against insurance Company"
+                },
+                "order": 80,
+                "enabled": true
+              },
+              {
+                "id": "insurances_life_health_travel_motor_etc_faq_009",
+                "question": {
+                  "en": "Problems in cancelling policy or receiving refund."
+                },
+                "answer": {
+                  "en": "Ensure cancellation request is in writing. If refund is delayed, file consumer complaint in District Consumer Redressal Commission."
+                },
+                "order": 90,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "internet_services",
+            "label": {
+              "en": "Internet, Mobile & telecom services"
+            },
+            "data_name": "Internet Services",
+            "order": 40,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "internet_services_faq_001",
+                "question": {
+                  "en": "Internet service is frequently disconnected / not working properly."
+                },
+                "answer": {
+                  "en": "Suggested Reply to Complainant:\nIf your internet service is frequently breaking down or not functioning properly:\n1. Immediately register a complaint with your Internet Service Provider (ISP) through customer care, app, email, or website.\n2. Always obtain a complaint/ticket number and keep a record (SMS/email screenshot).\n3. The ISP is required to restore services within a reasonable time (generally 24–72 hours depending on issue).\n4. If service remains disrupted for extended periods, you may:\nRequest proportionate refund/adjustment for the non-service period.\nEscalate the complaint to the ISP’s Nodal Officer/Appellate Authority.\n5. If unresolved, file complaint at:\nState Consumer Helpline, National Consumer Helpline ()\nConsumer Commission under Consumer Protection Act, 2019.\nYou are entitled to uninterrupted service for the period for which payment has been made"
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "internet_services_faq_002",
+                "question": {
+                  "en": "Not Resolving Internet Complaint on Time"
+                },
+                "answer": {
+                  "en": "ISP is not responding or resolving the complaint despite repeated follow-ups.\nSuggested Reply to Complainant:\nIf your ISP is delaying resolution:\n1. Send a written complaint via email mentioning:\nCustomer ID\nComplaint numbers\nDates of prior complaints\n2. If no resolution within reasonable time (usually 3 days), escalate to:\nISP’s Nodal Officer\nISP’s Appellate Authority\n3. Keep record of:\nCall logs\nEmails\nService downtime duration\n4. You may demand:\nCompensation for prolonged disruption\nAdjustment in next bill\n5. If still unresolved, you may:\nFile complaint on DoT grievance portal (Sanchar Saathi / CPGRAMS)\nApproach District Consumer Disputes Redressal Commission.\nDelay in service amounts to deficiency in service under Consumer Protection Act."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "internet_services_faq_003",
+                "question": {
+                  "en": "After Cancellation Request Not Refunding Remaining Amount"
+                },
+                "answer": {
+                  "en": "Service cancelled but remaining prepaid balance/security deposit not refunded.\nSuggested Reply to Complainant:\nIf refund is not processed after cancellation:\n1. Submit cancellation request in writing (email preferred).\n2. Keep acknowledgement or ticket number.\n3. ISPs are generally required to:\nProcess refund within reasonable time (usually 30–45 days)\nRefund security deposit after equipment return\n4. If refund is delayed:\nSend reminder email demanding refund with timeline.\nMention that delay amounts to unfair trade practice.\n5. If no response:\nFile complaint with State Consumer Helpline/National Consumer Helpline (1915) or contact local consumer organization.\nFile case before Consumer Commission for refund + compensation.\nYou may also claim interest on delayed refund if the delay is unreasonable."
+                },
+                "order": 30,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "educational_institute",
+            "label": {
+              "en": "Education"
+            },
+            "data_name": "Educational Institute",
+            "order": 50,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "educational_institute_faq_001",
+                "question": {
+                  "en": "Tuition Fees Refund Not Received After Cancellation of Admission"
+                },
+                "answer": {
+                  "en": "With reference to your complaint regarding non-refund of tuition fees after cancellation of admission, we inform you that educational institutions are bound to follow their declared refund policy and the guidelines issued by regulatory authorities such as University Grants Commission (UGC) and other concerned education boards.\nIf admission has been cancelled within the stipulated time and before the last date prescribed for withdrawal, the institution is required to refund the fees after deducting permissible administrative charges (if applicable), as per rules.\nYou are advised to:\n1. Submit a written refund request to the institution along with cancellation proof.\n2. Keep copies of fee receipts, admission form, cancellation letter, and communication records.\n3. Request a written explanation if refund is denied.\nIf the institution fails to refund the amount without valid reason, you may file a complaint before the appropriate Consumer Commission under the Consumer Protection Act for deficiency in service."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "educational_institute_faq_002",
+                "question": {
+                  "en": "Tuition Classes Not Providing Proper Teaching as Promised"
+                },
+                "answer": {
+                  "en": "With reference to your complaint regarding inadequate teaching and non-fulfilment of promises made by the tuition institute, please note that if the institute has failed to provide services as advertised or assured at the time of admission, it may amount to deficiency in service and unfair trade practice.\nYou are advised to:\n1. Collect and preserve advertisement materials, brochures, prospectus, or any written assurances.\n2. Maintain records of fee payment receipts.\n3. Submit a written complaint to the institute management seeking rectification or refund (if applicable).\n4. Request improvement in teaching standards or replacement of teaching staff in writing.\nIf the institute fails to resolve the issue satisfactorily, you may approach the District Consumer Disputes Redressal Commission for appropriate relief including refund, compensation, or corrective directions."
+                },
+                "order": 20,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "railway",
+            "label": {
+              "en": "Taxi, Bus, Railway"
+            },
+            "data_name": "Railway",
+            "order": 60,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "railway_faq_001",
+                "question": {
+                  "en": "Train is late or cancelled. Can I get refund/compensation?"
+                },
+                "answer": {
+                  "en": "If the train is cancelled by Railways, you are entitled to a full refund of the ticket fare.\nFor e-tickets, refund is automatically credited (if not travelled).\nFor counter tickets, refund can be claimed at the reservation counter within prescribed time.\nGenerally, no compensation is paid for late running, but refund is available if you choose not to travel due to delay (as per rules).\nYou may file a complaint with Indian Railways through official channels."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "railway_faq_002",
+                "question": {
+                  "en": "How to file complaint against Railway service?"
+                },
+                "answer": {
+                  "en": "You can lodge complaint through:\nRail Madad Portal: https://railmadad.indianrailways.gov.in\nHelpline Number: 139\nTwitter: Tag official railway handles\nRailway Station Complaint Book\nOnline via IRCTC (for ticketing issues)\nKeep your PNR number, ticket copy, and details of issue ready."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "railway_faq_003",
+                "question": {
+                  "en": "Poor cleanliness in train or railway station. What to do?"
+                },
+                "answer": {
+                  "en": "Immediately complain on Rail Madad App or call 139.\nYou can also inform the Train Ticket Examiner (TTE).\nTake photos as evidence if possible.\nRailways are responsible for maintaining hygiene standards."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "railway_faq_004",
+                "question": {
+                  "en": "Overcharging for food/water in train or station."
+                },
+                "answer": {
+                  "en": "Packaged items must be sold at MRP only.\nIf overcharged, ask for bill and complain immediately.\nComplaint can be filed via Rail Madad or to Station Master.\nFood services in many trains are managed by Indian Railway Catering and Tourism Corporation."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "railway_faq_005",
+                "question": {
+                  "en": "Loss/Theft of luggage during journey."
+                },
+                "answer": {
+                  "en": "Immediately inform Railway Protection Force (RPF).\nLodge complaint at nearest Government Railway Police (GRP) station.\nFile online complaint via Rail Madad.\nCompensation may be available depending on circumstances and proof."
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "railway_faq_006",
+                "question": {
+                  "en": "Misbehavior by railway staff."
+                },
+                "answer": {
+                  "en": "Note employee name, badge number (if available).\nFile complaint through Rail Madad or helpline 139.\nSerious cases can be escalated to Divisional Railway Manager (DRM)."
+                },
+                "order": 60,
+                "enabled": true
+              },
+              {
+                "id": "railway_faq_007",
+                "question": {
+                  "en": "Ticket not confirmed (Waitlisted/RAC). What are my rights?"
+                },
+                "answer": {
+                  "en": "If e-ticket remains waitlisted after chart preparation, it is automatically cancelled and refund is processed.\nRAC passengers are allowed to travel with shared berth."
+                },
+                "order": 70,
+                "enabled": true
+              },
+              {
+                "id": "railway_faq_008",
+                "question": {
+                  "en": "Train accident or injury during journey."
+                },
+                "answer": {
+                  "en": "Compensation claims can be filed before the Railway Claims Tribunal for injury, death, or loss of goods."
+                },
+                "order": 80,
+                "enabled": true
+              },
+              {
+                "id": "railway_faq_009",
+                "question": {
+                  "en": "Senior citizen / Divyang concession related issue."
+                },
+                "answer": {
+                  "en": "Verify eligibility as per current Railway rules.\nIn case of denial, submit written complaint to Station Master or online via Rail Madad."
+                },
+                "order": 90,
+                "enabled": true
+              },
+              {
+                "id": "railway_faq_010",
+                "question": {
+                  "en": "Where to escalate if complaint is not resolved?"
+                },
+                "answer": {
+                  "en": "Escalate to Divisional Railway Manager (DRM).\nFile grievance on CPGRAMS portal.\nApproach Consumer Commission if there is deficiency in service under Consumer Protection Act (subject to applicability)."
+                },
+                "order": 100,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "transport_tours_travels",
+            "label": {
+              "en": "Tour Packages (Tour, Vacation Club, and Hotel)"
+            },
+            "data_name": "Transport Tours & Travels",
+            "order": 70,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "transport_tours_travels_faq_001",
+                "question": {
+                  "en": "Bus/Taxi did not arrive at scheduled time. What can I do?"
+                },
+                "answer": {
+                  "en": "If the transport service provider fails to operate as per the confirmed schedule:\nImmediately contact the service provider and lodge a complaint.\nPreserve booking receipt, ticket copy, payment proof, and communication records.\nAsk for written clarification and refund/compensation (if applicable).\nIf unresolved, you may file a complaint before the appropriate Consumer Commission for deficiency in service under the Consumer Protection Act."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "transport_tours_travels_faq_002",
+                "question": {
+                  "en": "Vehicle condition was poor / AC not working / Overcrowding. What is the remedy?"
+                },
+                "answer": {
+                  "en": "Providing unsafe or substandard vehicles amounts to deficiency in service.\nTake photos/videos as evidence.\nObtain details of the vehicle (number, operator name).\nSend a written complaint to the company.\nIf no action is taken, complaint can be filed before the Consumer Commission claiming refund and compensation."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "transport_tours_travels_faq_003",
+                "question": {
+                  "en": "Tour package services not provided as promised (hotel downgrade, itinerary change, cancellation without notice). What should I do?"
+                },
+                "answer": {
+                  "en": "If the tour operator fails to provide services as per brochure/contract:\nPreserve brochure, itinerary, booking confirmation.\nCollect proof of alternate arrangements made by you.\nSend written notice to the tour operator demanding refund/compensation.\nFile complaint before Consumer Commission for unfair trade practice/deficiency in service."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "transport_tours_travels_faq_004",
+                "question": {
+                  "en": "Ticket cancelled but refund not received."
+                },
+                "answer": {
+                  "en": "Check refund rules mentioned at the time of booking.\nKeep cancellation receipt and transaction reference.\nIf refund is delayed beyond reasonable time, issue written reminder.\nConsumer complaint can be filed for delay or non-refund."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "transport_tours_travels_faq_005",
+                "question": {
+                  "en": "Extra charges demanded during journey."
+                },
+                "answer": {
+                  "en": "Service providers cannot arbitrarily demand additional charges beyond agreed terms.\nPay under protest (if unavoidable).\nObtain receipt.\nLodge complaint with company and transport authority.\nApproach Consumer Commission for refund."
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "transport_tours_travels_faq_006",
+                "question": {
+                  "en": "Loss or damage of luggage during travel."
+                },
+                "answer": {
+                  "en": "Immediately inform the conductor/driver/operator.\nFile written complaint and get acknowledgment.\nClaim compensation from the service provider.\nIn case of negligence, Consumer Commission complaint is maintainable."
+                },
+                "order": 60,
+                "enabled": true
+              },
+              {
+                "id": "transport_tours_travels_faq_007",
+                "question": {
+                  "en": "Accident or injury during tour/transport service."
+                },
+                "answer": {
+                  "en": "If injury occurs due to negligence:\nObtain medical report.\nCollect accident details.\nFile police complaint if necessary.\nClaim compensation from service provider and/or insurance company.\nConsumer complaint can be filed for compensation."
+                },
+                "order": 70,
+                "enabled": true
+              },
+              {
+                "id": "transport_tours_travels_faq_008",
+                "question": {
+                  "en": "Travel agent booked wrong ticket / wrong date."
+                },
+                "answer": {
+                  "en": "If mistake is due to agent negligence:\nPreserve booking records.\nDemand refund and compensation.\nComplaint can be filed for deficiency in service."
+                },
+                "order": 80,
+                "enabled": true
+              },
+              {
+                "id": "transport_tours_travels_faq_009",
+                "question": {
+                  "en": "Where can a complaint be filed?"
+                },
+                "answer": {
+                  "en": "A complaint may be filed before the appropriate District Consumer Disputes Redressal Commission where:\nThe complainant resides, OR The opposite party operates business, OR Cause of action arose."
+                },
+                "order": 90,
+                "enabled": true
+              },
+              {
+                "id": "transport_tours_travels_faq_010",
+                "question": {
+                  "en": "What documents are required to file complaint?"
+                },
+                "answer": {
+                  "en": "Copy of ticket/booking receipt\nPayment proof\nWritten communication with service provider\nID proof\nEvidence (photos/videos if any)\nCopy of legal notice (if issued)"
+                },
+                "order": 100,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "housing_builder",
+            "label": {
+              "en": "Real Estate"
+            },
+            "data_name": "Housing/ Builder",
+            "order": 80,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "housing_builder_faq_001",
+                "question": {
+                  "en": "Builder is not giving possession as per promised date."
+                },
+                "answer": {
+                  "en": "Consumer Guidance:\nIf the builder has failed to hand over possession within the promised time mentioned in the Agreement for Sale, it amounts to deficiency in service under the Consumer Protection Act.\n🔹 What You Can Do:\n1. Check the Agreement – Verify the possession date and delay compensation clause.\n2. Send Legal Notice – Issue a written notice demanding possession with interest/compensation.\n3. File Complaint before RERA\nApproach Real Estate Regulatory Authority (RERA) of your respective State.\n4. File Consumer Complaint\nYou can file a case before the appropriate District/State/National Consumer Commission depending on claim amount.\n5. Claim Relief:\nImmediate possession, Refund with interest, Delay compensation\nMental harassment compensation"
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "housing_builder_faq_002",
+                "question": {
+                  "en": "Builder is not providing facilities as promised."
+                },
+                "answer": {
+                  "en": "Consumer Guidance:\nIf amenities such as parking, lift, garden, clubhouse, water supply, drainage, electricity connection etc. promised in brochure or agreement are not provided, it is considered unfair trade practice and deficiency in service.\n🔹 What You Can Do:\n1. Collect brochure, advertisement, agreement copy as proof.\n2. Submit written complaint to builder.\n3. File complaint before:\nReal Estate Regulatory Authority (RERA) , Consumer Commission\n4. Seek:\nCompletion of promised facilities, Compensation, Refund (if project materially altered)"
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "housing_builder_faq_003",
+                "question": {
+                  "en": "Poor Construction / Low Quality Work"
+                },
+                "answer": {
+                  "en": "Consumer Guidance:\nPoor construction such as cracks, leakage, low-quality material, structural defects etc. amounts to deficiency in service.\nUnder RERA, builder is liable to rectify structural defects within 5 years from possession.\n🔹 What You Can Do:\n1. Take photographs/videos of defects.\n2. Obtain engineer/architect report (if serious issue).\n3. Give written complaint to builder.\n4. File complaint before:\n**Real Estate Regulatory Authority, Consumer Commission\n5. Claim:\nRepair work, Rectification cost, Compensation\nImportant Documents Required\nAgreement for Sale, Payment Receipts, Builder Brochure / Advertisement\nAll correspondence with builder, Possession letter (if any),\nPhotographs (in case of defects)"
+                },
+                "order": 30,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "postal_services",
+            "label": {
+              "en": "Post & courier"
+            },
+            "data_name": "Postal Services",
+            "order": 90,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "postal_services_faq_001",
+                "question": {
+                  "en": "Article/Parcel Not Delivered. What Should I Do?"
+                },
+                "answer": {
+                  "en": "Track the article using the tracking number on the official website of India Post.\nContact the concerned Post Office.\nFile a written complaint at the Post Office or online through India Post grievance portal.\nIf not resolved, approach the Consumer Commission under the Consumer Protection Act, 2019."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "postal_services_faq_002",
+                "question": {
+                  "en": "Speed Post / Registered Post Delivered Late. Can I Claim Compensation?"
+                },
+                "answer": {
+                  "en": "In case of Speed Post, compensation is payable as per India Post rules (subject to terms & conditions).\nDelay must be officially recorded.\nSubmit claim form with booking receipt.\nIf compensation is denied unfairly, consumer complaint can be filed before District Consumer Commission."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "postal_services_faq_003",
+                "question": {
+                  "en": "Parcel Lost in Transit. What Is the Remedy?"
+                },
+                "answer": {
+                  "en": "File complaint immediately with booking receipt.\nCompensation depends on:\nWhether the parcel was insured.\nDeclared value.\nFor uninsured articles, limited compensation is payable as per postal rules.\nIf negligence is proved, complaint can be filed before Consumer Commission."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "postal_services_faq_004",
+                "question": {
+                  "en": "Damaged Article Received. What Should Be Done?"
+                },
+                "answer": {
+                  "en": "Do not accept delivery without noting damage.\nTake photographs immediately.\nLodge complaint within prescribed time.\nClaim compensation (if insured).\nIf claim rejected, legal remedy is available."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "postal_services_faq_005",
+                "question": {
+                  "en": "Post Office Refusing to Accept Parcel. Is It Legal?"
+                },
+                "answer": {
+                  "en": "Post Office may refuse article if:\nProhibited items are included.\nImproper packing.\nIncorrect address.\nExceeds weight/size limits.\nIf refusal is without valid reason, written complaint may be filed with the Senior Superintendent of Post Offices."
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "postal_services_faq_006",
+                "question": {
+                  "en": "Money Order Not Received. What Is the Remedy?"
+                },
+                "answer": {
+                  "en": "Track the Money Order status.\nFile complaint at booking office.\nIf payment wrongly delivered, inquiry will be conducted.\nCompensation is payable if fault is proved."
+                },
+                "order": 60,
+                "enabled": true
+              },
+              {
+                "id": "postal_services_faq_007",
+                "question": {
+                  "en": "Courier Company Not Delivering Parcel or Asking Extra Charges."
+                },
+                "answer": {
+                  "en": "Courier services are private companies and are covered under Consumer Protection Act.\nDemand written explanation.\nPreserve receipt and tracking proof.\nSend legal notice if necessary.\nFile complaint before Consumer Commission for deficiency in service."
+                },
+                "order": 70,
+                "enabled": true
+              },
+              {
+                "id": "postal_services_faq_008",
+                "question": {
+                  "en": "Postal Article Delivered to Wrong Person."
+                },
+                "answer": {
+                  "en": "File immediate complaint.\nSeek inquiry report.\nCompensation claim can be filed.\nConsumer case can be filed for negligence."
+                },
+                "order": 80,
+                "enabled": true
+              },
+              {
+                "id": "postal_services_faq_009",
+                "question": {
+                  "en": "How to File Complaint Against Post Office?"
+                },
+                "answer": {
+                  "en": "Visit concerned Post Office.\nLodge complaint through India Post website.\nCall Customer Care: 1800-266-6868\nEscalate to higher authority if not resolved.\nFile complaint before District Consumer Disputes Redressal Commission.\nIs Post Office Covered Under Consumer Protection Act?\nYes. Postal services fall under “service” as defined under the Consumer Protection Act, 2019.\nHowever, compensation is subject to provisions of the Indian Post Office Act."
+                },
+                "order": 90,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "lpg_png_petrol",
+            "label": {
+              "en": "LPG & Gas"
+            },
+            "data_name": "LPG, PNG & Petrol",
+            "order": 100,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "lpg_png_petrol_faq_001",
+                "question": {
+                  "en": "Phone number of Gas Agency is continuously busy / No response on calls"
+                },
+                "answer": {
+                  "en": "If the gas agency phone number is continuously busy or not being attended:\nBook refill through official online portals or mobile apps of the respective Oil Marketing Company (OMC) such as:\nIndian Oil Corporation Limited, Bharat Petroleum Corporation Limited\nHindustan Petroleum Corporation Limited\nUse IVRS booking facility or SMS booking service.\nLodge complaint on the company’s toll-free customer care number.\nIf the issue persists, submit a written complaint to the Area Manager of the concerned oil company."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "lpg_png_petrol_faq_002",
+                "question": {
+                  "en": "Gas agency is compelling purchase of hot plate from them"
+                },
+                "answer": {
+                  "en": "Gas agencies cannot compel consumers to purchase stove/hot plate from them.\nConsumers are free to purchase ISI-marked stove from any vendor.\nInsist on written communication if they refuse connection without stove purchase.\nLodge complaint with the respective OMC customer care.\nIf harassment continues, file complaint before the District Consumer Commission."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "lpg_png_petrol_faq_003",
+                "question": {
+                  "en": "Gas agency is forcing to take accessories at the time of new connection"
+                },
+                "answer": {
+                  "en": "At the time of new LPG connection:\nRegulator and safety hose are mandatory.\nOther accessories (apron, lighter, additional pipe, etc.) are optional.\nForcing bundled purchase is unfair trade practice.\nAsk for proper invoice showing item-wise details.\nFile complaint with concerned OMC or Consumer Helpline (National Consumer Helpline – 1915)."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "lpg_png_petrol_faq_004",
+                "question": {
+                  "en": "Gas agency is doing black marketing of LPG cylinders"
+                },
+                "answer": {
+                  "en": "Black marketing of LPG is illegal.\nIf you suspect black marketing:\nCollect evidence (delivery delay, refusal despite booking, overcharging, etc.).\nLodge written complaint to:\nCivil Supplies Department of your District.\nConcerned Oil Company.\nYou may also approach District Consumer Commission for deficiency in service."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "lpg_png_petrol_faq_005",
+                "question": {
+                  "en": "Gas agency is giving late delivery of cylinder"
+                },
+                "answer": {
+                  "en": "Normally, LPG refill should be delivered within a reasonable time after booking.\nCheck booking status online.\nIf delayed beyond reasonable time, complain to OMC customer care.\nAsk for complaint number and keep record.\nRepeated delay amounts to deficiency in service."
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "lpg_png_petrol_faq_006",
+                "question": {
+                  "en": "Weight is not carried out at the time of delivery despite demand"
+                },
+                "answer": {
+                  "en": "Delivery person must carry a weighing scale.\nConsumer has right to check gross weight.\nIf weight is less, refuse delivery and note complaint immediately.\nLodge complaint with OMC and mention cylinder number and delivery date."
+                },
+                "order": 60,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "electricity_boards",
+            "label": {
+              "en": "Electricity Company"
+            },
+            "data_name": "Electricity Boards",
+            "order": 110,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "electricity_boards_faq_001",
+                "question": {
+                  "en": "Addresses of Consumer Forums – PGVCL / MGVCL / UGVCL / DGVCL"
+                },
+                "answer": {
+                  "en": "For electricity-related grievances, consumers should first approach the Internal Grievance Redressal Cell (IGRC) of their respective electricity company. If not satisfied, they may approach the Electricity Ombudsman.\nThe four electricity distribution companies in Gujarat are:\nPaschim Gujarat Vij Company Limited (PGVCL)\nMadhya Gujarat Vij Company Limited (MGVCL)\nUttar Gujarat Vij Company Limited (UGVCL)\nDakshin Gujarat Vij Company Limited (DGVCL)\nConsumers can obtain the address of the concerned Circle Office/Division Office from the official website of the respective company or from the nearest electricity sub-division office.\nIf the grievance is not resolved within the prescribed time, the complainant may approach the Electricity Ombudsman, Gujarat.\nAdditionally, consumers may approach the District Consumer Disputes Redressal Commission under the Consumer Protection Act for deficiency in service."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "electricity_boards_faq_002",
+                "question": {
+                  "en": "Energy Bill Related Complaint – Where to File?"
+                },
+                "answer": {
+                  "en": "If there is an issue regarding:\nExcessive billing, Wrong Meter regarding, Average billing, Meter defect, Tariff category dispute\nThe consumer should first submit a written complaint to the concerned Sub-Division Office of the respective electricity company (PGVCL/MGVCL/UGVCL/DGVCL).\nIf the issue is not resolved:\n1. Approach the Internal Grievance Redressal Cell (IGRC) of the company.\n2. Thereafter, file a complaint before the Electricity Ombudsman.\n3. If still aggrieved, the consumer may approach the District Consumer Commission.\nKeep copies of:\nElectricity bills,Payment receipts, Previous correspondence"
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "electricity_boards_faq_003",
+                "question": {
+                  "en": "Power Cut Related Complaint"
+                },
+                "answer": {
+                  "en": "Frequent power failure, Long power interruption, Voltage Fluctuation\nImmediately register a complaint through:\nCustomer care helpline of the respective electricity company\nLocal sub-division office, Official website complaint portal\nIf the issue is recurring and not resolved, submit a written complaint to the Executive Engineer of the concerned Division.\nIn case of financial loss due to voltage fluctuation, the consumer may claim compensation as per company rules and approach the appropriate forum if not resolved."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "electricity_boards_faq_004",
+                "question": {
+                  "en": "Hanging Electric Wire (Vij Wire) – Safety Issue"
+                },
+                "answer": {
+                  "en": "Hanging or loose electric wires are dangerous and may cause serious accidents.\nImmediate Steps:\nInform the local electricity complaint center immediately.\nRegister complaint via helpline number.\nProvide exact location details (pole number/landmark).\nIf no action is taken despite complaint:\nSubmit written complaint to the Deputy Engineer/Executive Engineer of the concerned electricity company.\nIn case of serious negligence causing injury or damage, the affected person may claim compensation before the appropriate legal authority."
+                },
+                "order": 40,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "advocate",
+            "label": {
+              "en": "Advocate & Court Procedure"
+            },
+            "data_name": "Advocate",
+            "order": 120,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "advocate_faq_001",
+                "question": {
+                  "en": "Advocate is not replying properly about the case. What should I do?"
+                },
+                "answer": {
+                  "en": "Ask for case status in writing (WhatsApp/email).\nRequest case number, filing proof, and next hearing date."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "advocate_faq_002",
+                "question": {
+                  "en": "Advocate is not attending court dates. What are my options?"
+                },
+                "answer": {
+                  "en": "You can : Ask for an explanation of the case, Change of Youre Advocate, Taking No Objection Certificate, Take back your case Papers."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "advocate_faq_003",
+                "question": {
+                  "en": "Fees paid but case not filed. What can I do?"
+                },
+                "answer": {
+                  "en": "You may:\nDemand proof of filing\nSend a legal notice\nAsk for refund"
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "advocate_faq_004",
+                "question": {
+                  "en": "Can I change my advocate?"
+                },
+                "answer": {
+                  "en": "Yes. You can change your advocate at any stage of the case. Taking No objection certificate."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "advocate_faq_005",
+                "question": {
+                  "en": "Can I complain against an advocate?"
+                },
+                "answer": {
+                  "en": "Yes. You can complain to the State Bar Council for misconduct or negligence."
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "advocate_faq_006",
+                "question": {
+                  "en": "Can I go to consumer court?"
+                },
+                "answer": {
+                  "en": "Yes, if fees were paid and service was not provided by the Advocate you can file case in Consumer Forum for deficiency in service."
+                },
+                "order": 60,
+                "enabled": true
+              },
+              {
+                "id": "advocate_faq_007",
+                "question": {
+                  "en": "What records should I keep regarding my case ?"
+                },
+                "answer": {
+                  "en": "Always keep:\nFee receipts\nMessages/emails\nCase-related documents"
+                },
+                "order": 70,
+                "enabled": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "other",
+        "label": {
+          "en": "Other Categories"
+        },
+        "icon": "📚",
+        "order": 30,
+        "enabled": true,
+        "categories": [
+          {
+            "id": "agriculture",
+            "label": {
+              "en": "Agriculture"
+            },
+            "data_name": "Agriculture",
+            "order": 10,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "agriculture_faq_001",
+                "question": {
+                  "en": "Agro shopkeeper is charging more than MRP for fertilizer. What to do?"
+                },
+                "answer": {
+                  "en": "Charging more than the Maximum Retail Price (MRP) printed on the fertilizer bag is illegal under the Essential Commodities Act and Fertilizer Control Order (FCO).\nWhat farmers should do:\nDo not pay more than the MRP.\nAlways demand a proper bill/invoice.\nPreserve the fertilizer bag and bill as evidence.\nIf extra amount is charged, file a complaint with:\nDistrict / Taluka Agriculture Officer\nConsumer Organisation or Consumer Helpline or Legal Metrology Department\nConsumer Commission"
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "agriculture_faq_002",
+                "question": {
+                  "en": "Agro shopkeeper is forcing to buy other products along with fertilizer. What to do?"
+                },
+                "answer": {
+                  "en": "Forcing farmers to buy seeds, pesticides, micronutrients, or any other product along with fertilizer is an unfair trade practice and illegal.\nWhat farmers should do:\nClearly refuse forced or bundled sales.\nAsk for fertilizer only.\nCollect proof such as bill, witnesses, or audio/video if possible.\nFile a complaint with:\nAgriculture Department or Consumer Protection Authority or Consumer Commission\nRelief available:\nRefund of forced products , Compensation for harassment , Penalty on shopkeeper"
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "agriculture_faq_003",
+                "question": {
+                  "en": "Seeds were defective and crop failed. What to do?"
+                },
+                "answer": {
+                  "en": "If crop failure occurs due to defective, substandard, or misbranded seeds, the farmer is entitled to compensation.\nImmediate steps (Very Important):\nInform the Agriculture Officer in writing immediately after noticing the problem.\nDo not destroy the crop before inspection.\nPreserve:\nSeed packet with label, Purchase bill, Remaining seeds (if any)\nInspection procedure:\nAgriculture Department forms a Seed Inspection Committee.\nField inspection and report is prepared.\nIf seed defect is proved, farmer can claim:\nCost of seeds, Crop loss compensation , Expenses incurred\nLegal remedy:\nComplaint can be filed before Consumer Commission against dealer, distributor, and manufacturer."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "agriculture_faq_004",
+                "question": {
+                  "en": "After using pesticide, crop was damaged or failed. What to do?"
+                },
+                "answer": {
+                  "en": "If crop damage occurs due to defective pesticide, wrong chemical, or wrong advice given by seller, the farmer can claim compensation.\nImmediate steps:\nStop using the pesticide immediately.\nInform the Agriculture Officer as soon as damage is noticed.\nPreserve:\nPesticide container/bottle\nPurchase bill\nRemaining pesticide\nDo not remove damaged crop until inspection.\nInspection and testing:\nField inspection by Agriculture Officer.\nSample may be sent for laboratory testing.\nIf defect or wrong guidance is proved, farmer is entitled to compensation for crop loss.\nLegal remedy:\nFile complaint before Consumer Commission for compensation."
+                },
+                "order": 40,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "cable_television_dth_services",
+            "label": {
+              "en": "Cable Television & DTH Services"
+            },
+            "data_name": "Cable Television & DTH Services",
+            "order": 20,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "cable_television_dth_services_faq_001",
+                "question": {
+                  "en": "Dish TV purchased 5 days ago – “No Signal” problem. What to do?"
+                },
+                "answer": {
+                  "en": "If you have purchased a Dish TV connection within the last 5 days and are facing a “No Signal” issue, please take the following steps:\n1. Check basic connections – Ensure the set-top box is properly connected to the TV and power supply. Check that the dish cable is firmly connected.\n2. Restart the set-top box – Switch off the power, wait 2–3 minutes, and restart.\n3. Check weather conditions – Heavy rain or storm may temporarily disturb signal.\n4. Contact Customer Care immediately – Since the connection is new, the issue may be due to improper installation or dish alignment. Request a free service visit, as it is within installation warranty period.\n5. Keep purchase invoice and complaint number safely.\nIf the service provider fails to resolve the issue within reasonable time (generally 48–72 hours), you may:\nEscalate the complaint to the Nodal Officer / Appellate Authority of the DTH company.\nContact Consumer Organisation or File a complaint before the District Consumer Disputes Redressal Commission under the Consumer Protection Act, 2019 for deficiency in service."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "cable_television_dth_services_faq_002",
+                "question": {
+                  "en": "Only Doordarshan channels visible. What to do?"
+                },
+                "answer": {
+                  "en": "If only Doordarshan channels are visible, the possible reasons may be:\n1. Subscription expired – Check whether your recharge plan has expired.\n2. Package not activated – Confirm your selected channel package with the operator.\n3. Set-top box in Free-to-Air mode – Contact service provider to refresh signal.\n4. Account suspended due to non-payment.\nSteps to take:\nCheck recharge status through customer care or mobile app.\nRequest a “Refresh Signal” from customer care.\nAsk for written confirmation of your subscribed plan and charges.\nIf the operator has deducted charges but not activated channels, it amounts to deficiency in service, and you may lodge a complaint with:\nThe company’s Nodal Officer.\nTRAI/DAS grievance mechanism.\nContact Consumer organisation or Consumer Commission, if unresolved."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "cable_television_dth_services_faq_003",
+                "question": {
+                  "en": "Cable Operator not giving proper service / rude behaviour. What to do?"
+                },
+                "answer": {
+                  "en": "Cable operators are obligated to provide continuous and quality service under TRAI regulations.\nIf the operator:\nFrequently interrupts service,\nDoes not respond to complaints,\nOvercharges,\nBehaves rudely or threatens disconnection,\nYou may:\n1. Submit a written complaint to the cable operator and keep a copy.\n2. Ask for the complaint number and resolution timeline.\n3. Escalate to the Multi System Operator (MSO) if applicable.\n4. File complaint with:\nTRAI grievance redressal mechanism or\nConsumer Disputes Redressal Commission (for compensation for mental harassment and deficiency in service)."
+                },
+                "order": 30,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "cinema_hall",
+            "label": {
+              "en": "Cinema Hall"
+            },
+            "data_name": "Cinema Hall",
+            "order": 30,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "cinema_hall_faq_001",
+                "question": {
+                  "en": "Cinema Hall is not allowing outside Drinking Water / Food Packets. What should I do?"
+                },
+                "answer": {
+                  "en": "As per consumer rights and various court decisions, cinema halls cannot deny entry of essential items such as drinking water and baby food.\nHowever, cinema management may restrict outside food items as per their policy, except essential items.\nWhat You Can Do:\n1. Politely ask the cinema management to show the written rule/order regarding prohibition.\n2. If drinking water is not allowed from outside, ensure that:\nFree and safe drinking water is provided inside the premises.\n3. If denied basic necessities, you may:\nFile a written complaint with the theatre management.\nApproach Local Consumer Organisation or  the District Consumer Commission.\nComplain to the local Municipal Authority if hygiene standards are poor."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "cinema_hall_faq_002",
+                "question": {
+                  "en": "Cinema Hall is charging more than MRP for Cold Drinks / Water Bottles / Packed Food. What should I do?"
+                },
+                "answer": {
+                  "en": "As per the Legal Metrology Act, 2009, no seller can charge more than the printed Maximum Retail Price (MRP) on packaged commodities.\nCharging above MRP is a punishable offence.\n1. Keep the purchase bill and take a photo of the product showing the MRP.\n2. File a complaint with: Legal Metrology Department/ District Supply Officer/ Local Consumer Organisation\n3. You may also file a case before the District Consumer Disputes Redressal Commission for refund and compensation."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "cinema_hall_faq_003",
+                "question": {
+                  "en": "Cinema Hall is forcing viewers to purchase Food Coupons along with Tickets. What should I do?"
+                },
+                "answer": {
+                  "en": "Refuse to accept compulsory combo offers.\n1. Ask for written clarification of the policy.\n2. Preserve ticket and payment proof.\nFile complaint before:District Consumer Commission/ Local Consumer Organisation\nYou can claim:\nRefund of forced charges\nCompensation for harassment\nLitigation cost\nDocuments Required for Complaint:\nCopy of Ticket\nPayment Receipt / Bill\nPhotograph of MRP (if overcharged)\nWritten communication (if any)"
+                },
+                "order": 30,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "courier_service",
+            "label": {
+              "en": "Courier Service"
+            },
+            "data_name": "Courier Service",
+            "order": 40,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "courier_service_faq_001",
+                "question": {
+                  "en": "Courier company is refusing home delivery stating the place is far from their office. What to do?"
+                },
+                "answer": {
+                  "en": "If the courier company has accepted the booking for your address, they are legally bound to deliver it to the address mentioned on the parcel.\nWhat You Should Do:\nCheck the receipt/consignment note to confirm that door delivery charges were paid.\nIf delivery is refused, immediately:\nLodge a written complaint with the local branch.\nSend an email to the company’s customer care.\nPreserve booking receipt and tracking details.\nLegal Position:\nRefusal of delivery without valid reason amounts to deficiency in service under the Consumer Protection Act, 2019.\nIf the courier company claims the location is “out of service area,” they must:\nInform at the time of booking.\nNot accept the parcel for that address.\nIf unresolved, you may:\nContact Local Consumer Organisation and Send a legal notice. Or\nFile complaint before the District Consumer Disputes Redressal Commission."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "courier_service_faq_002",
+                "question": {
+                  "en": "Courier not delivered on specified day / Late delivery of parcel."
+                },
+                "answer": {
+                  "en": "Courier companies are bound to deliver within the committed time (especially in case of express/urgent delivery).\nWhat You Should Do:\nCheck the promised delivery timeline.\nDownload and keep tracking proof.\nSend written complaint requesting:\nReason for delay.\nRefund of courier charges (if time-bound service was promised).\nCompensation for loss (if delay caused financial loss).\nLegal Position:\nUnreasonable delay amounts to deficiency in service under the Consumer Protection Act, 2019.\nIf delay caused monetary loss (e.g., tender documents, exam forms, business goods), compensation can be claimed before the Consumer Commission."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "courier_service_faq_003",
+                "question": {
+                  "en": "Parcel received in damaged condition. What to do?"
+                },
+                "answer": {
+                  "en": "Immediate Steps:\nTake photographs of the parcel before opening.\nDo not discard packaging material.\nInform courier company immediately (preferably within 24 hours).\nObtain damage acknowledgement from delivery person (if possible).\nFile Complaint:\nSubmit written complaint with:\nCopy of consignment note\nPhotographs\nInvoice/value proof of goods\nLegal Position:\nCourier service is responsible for safe handling. Damage during transit is deficiency in service unless caused by:\nImproper packing by sender\nNatural calamity\nProhibited goods\nYou can claim:\nValue of goods\nCourier charges\nCompensation for mental harassment\nRemedy available under the Consumer Protection Act, 2019."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "courier_service_faq_004",
+                "question": {
+                  "en": "Parcel received but item missing (Partial Loss). What to do?"
+                },
+                "answer": {
+                  "en": "Immediate Action:\nInform courier company in writing immediately.\nMention weight difference (compare booked weight vs delivered weight).\nPreserve packaging and proof of contents (invoice, bill, photos before dispatch if available).\nClaim Procedure:\nAsk for claim form.\nSubmit: Invoice copy, ID proof, Consignment note, Proof of value\nLegal Position:\nLoss of contents during transit is deficiency in service under the Consumer Protection Act, 2019.\nCourier company cannot deny liability merely by printing “Owner’s Risk” unless negligence is disproved.\nYou may claim: Value of missing item, Refund of courier charges, Compensation\nGeneral Advice for Consumers\nAlways:\nAvoid sending prohibited items.\nKeep consignment note safely.\nUse insured/declared value service for valuable goods.\nIf the courier company does not resolve the issue:\n1. Contact local consumer organization for filling of complaint and send Legal Notice.\n2. File complaint before District Consumer Commission.\n3. Seek compensation for loss, harassment, and litigation cost."
+                },
+                "order": 40,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "court_procedure",
+            "label": {
+              "en": "Court Procedure"
+            },
+            "data_name": "Court Procedure",
+            "order": 50,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "court_procedure_faq_001",
+                "question": {
+                  "en": "Case filed before the Consumer Forum. Order passed in favor, but the Opposite Party is not complying. What to do?"
+                },
+                "answer": {
+                  "en": "If the Opposite Party does not comply with the order:\nYou can file an Execution Application before the same Commission which passed the order.\nThis is filed under the provisions of the Consumer Protection Act, 2019.\nThe Commission can:\nAttach property, Impose penalty, Issue arrest warrant, Order imprisonment for non-compliance\nFile the execution petition immediately after expiry of the compliance period mentioned in the order."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "court_procedure_faq_002",
+                "question": {
+                  "en": "Case filing fees related issue"
+                },
+                "answer": {
+                  "en": "The court fee depends on the value of goods/services and compensation claimed.\nAs per the Consumer Protection Act, 2019 and Rules:\nDistrict Commission – Fee based on claim amount.\nNo court fee for consumers below prescribed income category (if applicable as per rules).\nFees are payable through Demand Draft / Online (in case of e-filing).\nFor exact fee slab, contact the concerned Commission or check official website."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "court_procedure_faq_003",
+                "question": {
+                  "en": "What is the address of Consumer Forum?"
+                },
+                "answer": {
+                  "en": "Consumer Forums are now called:\nDistrict Consumer Disputes Redressal Commission\nState Consumer Disputes Redressal Commission\nNational Consumer Disputes Redressal Commission (NCDRC)\nThe National Commission is located at: New Delhi\nNational Consumer Disputes Redressal Commission\nFor District and State Commission addresses: Visit the official website:\nNational Consumer Helpline or respective State Government website."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "court_procedure_faq_004",
+                "question": {
+                  "en": "Who can file a consumer complaint? In which Forum?"
+                },
+                "answer": {
+                  "en": "Under the Consumer Protection Act, 2019, complaint can be filed by:\nConsumer\nLegal heir of consumer\nConsumer Association\nCentral/State Government\nMultiple consumers (class complaint)\nJurisdiction:\nDistrict Commission – Up to ₹50 Lakhs (as per latest pecuniary limits)\nState Commission – Above ₹50 Lakhs up to ₹2 Crore\nNational Commission – Above ₹2 Crore\n(Subject to amendments as notified.)"
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "court_procedure_faq_005",
+                "question": {
+                  "en": "What is the process for filing complaint in Consumer Forum?"
+                },
+                "answer": {
+                  "en": "Step-by-Step Process:\n1. Send legal notice to Opposite Party (optional but advisable)\n2. Draft complaint mentioning:\nFacts of the case, Deficiency in service/unfair trade practice, Relief sought\n3. Attach: Bills, Warranty documents, Proof of payment, Notice copy, Pay prescribed court   fee\n4. File before appropriate Commission (physically or online)\n5. Attend hearings\nNo advocate is compulsory."
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "court_procedure_faq_006",
+                "question": {
+                  "en": "How to check case status?"
+                },
+                "answer": {
+                  "en": "You can check case status:\nOn official website of the concerned Commission\nThrough E-Daakhil portal\nBy visiting the Commission office with case number\nNational Commission Website:\nNational Consumer Disputes Redressal Commission"
+                },
+                "order": 60,
+                "enabled": true
+              },
+              {
+                "id": "court_procedure_faq_007",
+                "question": {
+                  "en": "What is the procedure for filing case on E-Daakhil website?"
+                },
+                "answer": {
+                  "en": "E-Daakhil is the online filing system of Consumer Commissions.\nOfficial Portal:\nE-Daakhil\nSteps:\n1. Register yourself\n2. Verify via OTP\n3. Select appropriate Commission\n4. Upload complaint and documents (PDF format)\n5. Pay court fee online\n6. Submit application\n7. Track case status online"
+                },
+                "order": 70,
+                "enabled": true
+              },
+              {
+                "id": "court_procedure_faq_008",
+                "question": {
+                  "en": "What is the appeal period in NCDRC against State Commission order?"
+                },
+                "answer": {
+                  "en": "Appeal against State Commission order must be filed before:\nNational Consumer Disputes Redressal Commission\n⏳ Within 30 days from the date of order\n(Delay may be condoned if sufficient cause is shown.)\nProvision under the Consumer Protection Act, 2019."
+                },
+                "order": 80,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "credit_card",
+            "label": {
+              "en": "Credit Card"
+            },
+            "data_name": "Credit Card",
+            "order": 60,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "credit_card_faq_001",
+                "question": {
+                  "en": "Credit Card Bill Related Complaint"
+                },
+                "answer": {
+                  "en": "Issue: Dispute regarding incorrect billing, excess charges, unknown transactions, interest calculation, etc.\nIf you have received a credit card bill with incorrect charges or unauthorized transactions:\nImmediately lodge a written complaint with the concerned bank’s customer care and email grievance cell.\nRaise a dispute within 3 days (preferably immediately) of noticing the discrepancy.\nAsk for a written acknowledgment and complaint reference number.\nIf unauthorized transaction is involved, block the card immediately.\nIf not resolved within 30 days, you may escalate the matter to the bank’s Nodal Officer.\nIf still unresolved, you may file a complaint with the Reserve Bank of India under the Integrated Ombudsman Scheme.\nKeep copies of:  Credit Card Statement, Complaint emails, SMS Alerts, Transaction details."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "credit_card_faq_002",
+                "question": {
+                  "en": "Credit Card Issued Without Consent"
+                },
+                "answer": {
+                  "en": "Issue: Card issued without applying or consent.\nIf a credit card has been issued without your consent:\nDo not activate the card.\nImmediately send a written complaint to the bank stating that the card was issued without your authorization.\nDemand cancellation without any charges.\nCheck your CIBIL/credit report to ensure no adverse impact.\nIf charges are levied without activation, it amounts to unfair trade practice.\nIf the bank does not cancel it or demands fees, you may approach the Banking Ombudsman under the Reserve Bank of India guidelines or file a complaint before the Consumer Commission."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "credit_card_faq_003",
+                "question": {
+                  "en": "Credit Card Payment Done but Late Payment Charges Demanded"
+                },
+                "answer": {
+                  "en": "Issue: Late fees charged despite timely payment.\nIf payment was made before the due date:\nVerify payment date and credit date in the statement.\nKeep proof of payment (UTR number / bank receipt / screenshot).\nImmediately write to the bank requesting reversal of late payment charges and interest.\nIf payment delay was due to bank technical issue, mention clearly.\nIf not resolved, escalate to higher authority of the bank and then to the Reserve Bank of India Ombudsman."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "credit_card_faq_004",
+                "question": {
+                  "en": "Credit Card Received but PIN Not Received"
+                },
+                "answer": {
+                  "en": "Issue: Card delivered but PIN not received.\nReply to Complainant:\nDo not attempt to use the card until PIN is generated.\nMost banks provide PIN generation through: Net Banking, Mobile banking App, ATM, Customer Care IVR\nIf PIN is not received or cannot be generated, immediately inform the bank in writing.\nEnsure the card remains inactive until secure PIN is set"
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "credit_card_faq_005",
+                "question": {
+                  "en": "Credit Card Lost – What to Do?"
+                },
+                "answer": {
+                  "en": "If your credit card is lost or stolen:\n1. Immediately block the card via: Customer Care Helpline, Mobile Banking App, Net Banking\n2. Note down complaint reference number.\n3. Request written confirmation of blocking.\n4. Check statement for unauthorized transactions.\n5. If fraud transactions occurred, lodge complaint within 3 days to avoid liability.\n6. If required, file police complaint (especially in case of misuse)."
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "credit_card_faq_006",
+                "question": {
+                  "en": "Credit Card Bill Not Received on Time"
+                },
+                "answer": {
+                  "en": "Issue: Bill not received but late charges imposed.\nNon-receipt of bill does not remove payment responsibility.\nHowever, bank must provide e-statement access.\nRegister for SMS/email alerts immediately.\nIf bill was genuinely not sent, demand waiver of late charges in writing.\nAttach previous communication proof.\nIf unjust charges continue, escalate to bank grievance officer and then to Reserve Bank of India Ombudsman.\nGeneral Advice to Consumers\nAlways activate SMS/email alerts, Check Statement Monthly, Leep Payment proof safely, Never share card details, Report Fraud Immediately"
+                },
+                "order": 60,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "defective_goods",
+            "label": {
+              "en": "Defective Goods"
+            },
+            "data_name": "Defective Goods",
+            "order": 70,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "defective_goods_faq_001",
+                "question": {
+                  "en": "Goods Purchased but Received in Defective/Damaged Condition – What Should You Do?"
+                },
+                "answer": {
+                  "en": "If you have purchased goods and received them in a defective or damaged condition, you are entitled to seek redressal under the provisions of the Consumer Protection Act, 2019.\nImmediate Steps to Take:\n1. Do Not Use the Product\nAvoid using the defective/damaged item to prevent further complications in claiming replacement or refund.\n2. Collect Evidence\nTake clear photographs/videos of the damaged or defective product.\nPreserve the packaging, invoice, bill, warranty card, and delivery receipt.\n3. Inform the Seller Immediately\nLodge a written complaint (email/letter/online portal) with the seller or service provider.\nRequest replacement, repair, or refund as applicable.\nKeep acknowledgment of your complaint.\n4. Check Warranty/Return Policy\nRefer to the warranty terms and return/replacement policy mentioned on the invoice or website.\nIf the Seller Fails to Respond or Refuses to Resolve the Issue:\nSend a legal notice to the seller or contact local consumer organisation in your district.\nFile a complaint before the appropriate District Consumer Disputes Redressal Commission having jurisdiction over your area.\nFile an online complaint through the National Consumer Helpline (Toll-Free: 1915).\nUnder the law, supply of defective goods amounts to deficiency in service and unfair trade practice, and you may claim:\nReplacement of goods\nRefund of amount paid\nCompensation for loss or mental harassment\nLitigation costs\nDoctor did not perform proper operation / Operation failed – What to do?\nIf you believe that the operation was not properly performed or has failed due to negligence, you may take the following steps:\n1. Collect all medical records\nObtain copies of: Admission Papers, Consent forms, Operation notes, Discharge Summary, Prescriptions, Diagnostic reports, Billsand payment receipts, Hospital are legally bound to provide medical records to patients.\n2. Seek Second Medical Opinion\nConsult another qualified specialist and obtain a written opinion regarding the alleged negligence.\n3. Send Written Complaint to Hospital/Doctor\nSubmit a written complaint to the hospital administration requesting clarification and explanation.\n4. Approach Consumer Commission\nMedical services fall under the provisions of the Consumer Protection Act, 2019.\nIf there is deficiency in service or medical negligence, a complaint can be filed before the appropriate District Consumer Disputes Redressal Commission.\n5. Complaint to Medical Council\nYou may also file a complaint before the concerned State Medical Council for professional misconduct.\n6. Limitation Period\nA complaint should generally be filed within 2 years from the date of cause of action."
+                },
+                "order": 10,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "doctor",
+            "label": {
+              "en": "Doctor"
+            },
+            "data_name": "Doctor",
+            "order": 80,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "doctor_faq_001",
+                "question": {
+                  "en": "Doctor did not provide proper treatment – What to do?"
+                },
+                "answer": {
+                  "en": "If you feel the treatment provided was improper, careless, or not as per standard medical practice:\n1. Preserve all prescriptions and medical documents.\n2. Obtain a second opinion from another registered medical practitioner.\n3. Send a written notice to the doctor/hospital seeking explanation.\n4. If negligence is confirmed, file a complaint under the Consumer Protection Act, 2019 for deficiency in service.\n5. You may also approach the State Medical Council for inquiry into professional misconduct."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "doctor_faq_002",
+                "question": {
+                  "en": "Doctor has not given bill for treatment – What to do?"
+                },
+                "answer": {
+                  "en": "Issuing a proper bill/receipt is mandatory.\nIf a doctor or hospital refuses to issue a bill:\n1. Ask for the bill in writing.\n2. Preserve proof of payment (bank statement, UPI screenshot, cheque details, etc.).\n3. File a complaint with:\nLocal Health Authority\nConsumer Commission under the Consumer Protection Act, 2019\nGST Department (if applicable) for tax-related violations\nNon-issuance of bill amounts to unfair trade practice and deficiency in service."
+                },
+                "order": 20,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "finance_loan",
+            "label": {
+              "en": "Finance & Loan"
+            },
+            "data_name": "Finance & Loan",
+            "order": 90,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "finance_loan_faq_001",
+                "question": {
+                  "en": "The bank/NBFC has increased the rate of interest on my loan. What can I do?"
+                },
+                "answer": {
+                  "en": "If your loan is on a floating/variable interest rate, the lender is permitted to revise the interest rate as per market conditions and internal policy. However:\nThe lender must inform you about any change in interest rate.\nThe change should be as per the terms mentioned in your loan agreement.\nYou have the right to request a detailed statement showing the revised rate calculation.\nYou may ask for conversion to a fixed rate scheme (if available), subject to applicable charges.\nYou can also compare offers from other banks/NBFCs and consider balance transfer.\nIf the interest rate has been increased without proper intimation or not as per the agreement, you may:\n1. File a written complaint to the concerned bank/NBFC.\n2. If not resolved within 30 days, approach the Banking Ombudsman under the Reserve Bank of India Ombudsman Scheme.\n3. You may also file a complaint before the appropriate Consumer Commission under the Consumer Protection Act."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "finance_loan_faq_002",
+                "question": {
+                  "en": "Loan EMI Increased – Related Issue"
+                },
+                "answer": {
+                  "en": "Issue: My EMI amount has increased. What are my rights?\nEMI may increase due to:\nIncrease in floating interest rate.\nChange in loan tenure.\nReset clause in the agreement.\nYou should:\nCheck your loan agreement for reset/interest revision clauses.\nAsk the lender whether the EMI increase is due to higher interest or reduced tenure.\nRequest a revised amortization schedule in writing.\nVerify whether you were given prior intimation.\nIf the EMI increase is arbitrary or without notice:\nSubmit a written complaint to the bank/NBFC.\nEscalate to the Grievance Redressal Officer.\nIf unresolved, approach the Reserve Bank of India Ombudsman or file a complaint before the Consumer Commission."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "finance_loan_faq_003",
+                "question": {
+                  "en": "Late Fees and Charges Related Issue"
+                },
+                "answer": {
+                  "en": "Issue: Excessive late payment charges or hidden charges have been levied. What can be done?\nBanks/NBFCs can levy late fees or penal charges only if:\nThe charges are mentioned clearly in the loan agreement.\nThe borrower has defaulted in payment.\nThe charges are as per RBI guidelines and disclosed in the Key Fact Statement.\nYou should:\nRequest a detailed breakup of the charges.\nVerify whether the charges match the agreement.\nCheck if penal charges are reasonable and not excessive.\nEnsure that no compound penal interest is being charged unless permitted by regulation.\nIf unfair or excessive charges are imposed:\n1. Send a written complaint to the lender.\n2. Escalate to the Nodal Officer.\n3. File a complaint with the Reserve Bank of India under the Integrated Ombudsman Scheme.\n4. Approach the District Consumer Disputes Redressal Commission if deficiency in service is established."
+                },
+                "order": 30,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "general_information",
+            "label": {
+              "en": "General Information"
+            },
+            "data_name": "General Information",
+            "order": 100,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "general_information_faq_001",
+                "question": {
+                  "en": "Information Calls – Address of Government Departments, Nigam, Banks, Insurance Companies & Other Companies"
+                },
+                "answer": {
+                  "en": "Suggested Reply to Complainant:\nThank you for contacting our Consumer Organisation.\nIf you require the address or contact details of any Government Department, Nigam, Bank, Insurance Company, or Private Company, you may obtain the same through the following methods:\n• Visit the official website of the concerned department/company.\n• Contact the district-level office of the concerned department.\n• Visit the nearest branch office.\n• Contact the official customer care helpline of the respective organisation.\nFor government offices, you may also check:\nOfficial website of the concerned State Government\nDistrict Collector Office\nMunicipal Corporation / Nagar Palika Office\nIf you inform us of the specific department/company name and city, we can assist you in locating the appropriate contact details."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "general_information_faq_002",
+                "question": {
+                  "en": "Government Scheme Related Information"
+                },
+                "answer": {
+                  "en": "Suggested Reply to Complainant:\nThank you for your inquiry regarding Government Schemes.\nFor authentic and updated information regarding Central or State Government Schemes, you may:\n• Visit the official Government Portal (Central/State).\n• Contact the nearest Common Service Centre (CSC).\n• Visit the Taluka Office / Mamlatdar Office / District Collector Office.\n• Contact the concerned department implementing the scheme.\nPlease avoid relying on unofficial agents or unauthorized persons to prevent fraud.\nIf you specify the name of the scheme, we will guide you with the concerned department details."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "general_information_faq_003",
+                "question": {
+                  "en": "Information about State Consumer Helpline & Toll-Free Numbers"
+                },
+                "answer": {
+                  "en": "Suggested Reply to Complainant:\nFor consumer grievance assistance, you may contact:\n📞 State Consumer Helpline  (SCH)                                 National Consumer Helpline  (NCH)\nToll Free Number 1800 233 0222                                      Toll-Free Number: 1915 (Short Code)\nAlternate Number: 1800-11-4000\nYou may also file complaints online through the E-Daakhil Portal for Consumer Commissions.\nFor State-level assistance, you may contact the  Local Consumer Organisation or State Consumer Helpline of your respective state or visit the District Consumer Disputes Redressal Commission."
+                },
+                "order": 30,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "government_services",
+            "label": {
+              "en": "Government Services"
+            },
+            "data_name": "Government Services",
+            "order": 110,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "government_services_faq_001",
+                "question": {
+                  "en": "On NFSA APL / BPL / AAY Card – What type of food grain is available?"
+                },
+                "answer": {
+                  "en": "Under the National Food Security Act (NFSA):\nAAY (Antyodaya Anna Yojana) Card\n35 kg food grains per family per month\nRice – ₹3/kg\nWheat – ₹2/kg\nCoarse grains – ₹1/kg\nPriority Household (PHH) – BPL/APL Covered under NFSA\n5 kg food grains per person per month\nSame subsidized rates as above"
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "government_services_faq_002",
+                "question": {
+                  "en": "Card is APL category but not covered under NFSA. What to do?"
+                },
+                "answer": {
+                  "en": "Visit your Taluka Mamlatdar Office / Food & Civil Supplies Office.\nSubmit application for inclusion under NFSA (if eligible).\nAttach income certificate, Aadhaar card, family details, and required documents.\nYou may also apply through your State Ration Card Portal.\nIf eligible but not included, you may file written complaint to:\nDistrict Supply Officer (DSO)\nState Food & Civil Supplies Department"
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "government_services_faq_003",
+                "question": {
+                  "en": "Ration shopkeeper does not open shop regularly or on time."
+                },
+                "answer": {
+                  "en": "Every Fair Price Shop must follow fixed working hours.\nDisplay board must show:\nOpening time, Stock details, Price list\nYou may: Complain to Taluka Supply Officer, Call State Food Helpline (toll free – 1800 233 5500) File written complaint to District Collector office"
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "government_services_faq_004",
+                "question": {
+                  "en": "Applied for Maa Annapurna Yojana one year ago but name not included in NFSA list."
+                },
+                "answer": {
+                  "en": "Under Maa Annapurna Yojana (State specific scheme):\nCheck application status online (My Ration App).\nVerify whether documents were incomplete.\nSubmit written representation to Mamlatdar / DSO.\nAttach acknowledgement receipt copy."
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "government_services_faq_005",
+                "question": {
+                  "en": "Shopkeeper says stock not received."
+                },
+                "answer": {
+                  "en": "FPS dealer must display stock register publicly.\nBeneficiaries can demand to see stock register.\nIf false information given, file complaint to:\nTaluka Supply Officer, District Supply Officer, State Vigilance Committee"
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "government_services_faq_006",
+                "question": {
+                  "en": "Shopkeeper not giving food grains as per rules."
+                },
+                "answer": {
+                  "en": "Giving less quantity, Charging extra money, Forcing purchase of unwanted items\nAction: Take bill/receipt, Note date & quantity, File written complaint with evidence.\nComplaint can also be filed under Essential Commodities Act."
+                },
+                "order": 60,
+                "enabled": true
+              },
+              {
+                "id": "government_services_faq_007",
+                "question": {
+                  "en": "Procedure to Add / Remove Family Member in Ration Card"
+                },
+                "answer": {
+                  "en": "Required in case of: Birth, Death, Marriage, Migration certificate.\nDocuments Required: Aadhaar Card, Birth/Death Certificate (if applicable), Marriage certificate (if applicable), Old ration card copy\nSubmit application: Online through digital Gujarat portal or at Mamlatdar office/ Zonal office."
+                },
+                "order": 70,
+                "enabled": true
+              },
+              {
+                "id": "government_services_faq_008",
+                "question": {
+                  "en": "Procedure for New Ration Card"
+                },
+                "answer": {
+                  "en": "Steps: Fill prescribed application form, Attach:\nAadhaar of all members, Residence proof, Income certificate, Passport size photo.\nSubmit application: Online through digital Gujarat portal or at Mamlatdar office/ Zonal office.\nVerification will be conducted."
+                },
+                "order": 80,
+                "enabled": true
+              },
+              {
+                "id": "government_services_faq_009",
+                "question": {
+                  "en": "One Nation One Ration Card Scheme – Information"
+                },
+                "answer": {
+                  "en": "Under One Nation One Ration Card (ONORC):\nBeneficiaries can lift ration from any Fair Price Shop in India.\nAadhaar linked ration card required, Biometric authentication through e-POS machine.\nUseful for migrant workers."
+                },
+                "order": 90,
+                "enabled": true
+              },
+              {
+                "id": "government_services_faq_010",
+                "question": {
+                  "en": "Procedure for New BPL Ration Card"
+                },
+                "answer": {
+                  "en": "Apply at Taluka Mamlatdar Office.\nIncome must fall below State BPL limit.\nDocuments required: Income certificate, Aadhaar, Residence proof, Self-declaration\nGovernment will conduct verification survey.\nIf eligible, card will be issued under NFSA BPL category."
+                },
+                "order": 100,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "hotel_restaurants",
+            "label": {
+              "en": "Hotel & Restaurants"
+            },
+            "data_name": "Hotel & Restaurants",
+            "order": 120,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "hotel_restaurants_faq_001",
+                "question": {
+                  "en": "In Hotel and Restaurant Unhygienic Food Was Served"
+                },
+                "answer": {
+                  "en": "If unhygienic or contaminated food was served in a hotel or restaurant, it amounts to deficiency in service and violation of food safety standards under the Food Safety and Standards Authority of India (FSSAI) regulations.\nYou may take the following action:\n1. Collect Evidence\nKeep the bill/invoice.\nTake photographs or video of the food and premises (if possible).\nPreserve leftover food (if safe to do so).\nObtain medical certificate if illness occurred.\n2. File Complaint With Food Safety Authority\nLodge complaint through FSSAI portal: www.fssai.gov.in\nCall FSSAI helpline: 1800-112-100\nComplain to the Local Food Safety Officer of your district.\n3. Consumer Commission Complaint\nIf financial loss, health injury, or mental harassment occurred, you may file a complaint before the District Consumer Disputes Redressal Commission under the Consumer Protection Act."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "hotel_restaurants_faq_002",
+                "question": {
+                  "en": "Hotel and Restaurants Charging More Than MRP"
+                },
+                "answer": {
+                  "en": "Reply to Complainant:\nCharging more than the printed MRP (Maximum Retail Price) on packaged items (like water bottles, cold drinks, snacks) is illegal under the Legal Metrology Act.\nImportant Points:\nHotels and restaurants cannot charge more than MRP for packaged commodities.\nHowever, for freshly prepared food (like tea, meals, desserts), hotels can fix their own prices.\nAction Steps:\n1. Keep the bill and take photo of MRP printed on the product.\n2. File complaint with:\nLegal Metrology Department of your State.\nLocal District Food & Civil Supplies Department.\n3. You may also approach the Consumer Commission for refund and compensation."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "hotel_restaurants_faq_003",
+                "question": {
+                  "en": "Where to Complaint for Stale / Expired Food?"
+                },
+                "answer": {
+                  "en": "Reply to Complainant:\nSale of stale or expired food products is a serious offence under the Food Safety laws.\nYou may complain to:\nFood Safety and Standards Authority of India (FSSAI)\nLocal Food Safety Officer\nMunicipal Health Department\nHow to File Complaint:\nOnline at FSSAI website\nFSSAI Helpline: 1800-112-100\nEmail complaint to your State Food Safety Department\nProvide: Shop name, address, product name, batch number, expiry date, and bill copy.\nIf health damage occurred, you may also file a case before the Consumer Commission claiming compensation.\nAdditional Guidance for Complainants\nAlways insist on proper bill.\nCheck FSSAI license number displayed at hotel/shop.\nCheck manufacturing and expiry date before purchase.\nKeep evidence for stronger legal action."
+                },
+                "order": 30,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "hotel_restaurant",
+            "label": {
+              "en": "Hotel / Restaurant"
+            },
+            "data_name": "Hotel / Restaurant",
+            "order": 130,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "hotel_restaurant_faq_001",
+                "question": {
+                  "en": "Hotel/Restaurant is Charging More than MRP for Packaged Items. What Should I Do?"
+                },
+                "answer": {
+                  "en": "Consumer Rights: As per the Legal Metrology (Packaged Commodities) Rules, 2011, no seller (including hotels/restaurants) can charge more than the printed MRP for packaged goods such as:\nBottled water, Cold drinks, Packed snacks\nWhere to File Complaint: District Legal Metrology Department\nState Consumer Helpline (SCH): 1800 233 0222 (Toll Free)\nOnline Email to : tolmap-ahd@gujarat.gov.in\nConsumer Commission under the Consumer Protection Act, 2019\nKeep Ready: Original Bill/Invoice, Photograph of product showing MRP,Name & address of hotel/restaurant"
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "hotel_restaurant_faq_002",
+                "question": {
+                  "en": "Unhygienic / Contaminated Food Served in Hotel or Restaurant"
+                },
+                "answer": {
+                  "en": "If You Were Served:  Stale or spoiled food, Food with insects/foreign objects, Food causing illness, Poor hygiene conditions\nWhere to Complain:\nFood Safety Officer of your District, State Food Safety Department\nOnline complaint at Food Safety and Standards Authority of India (FSSAI) Website: https://foscos.fssai.gov.in\nCall FSSAI Helpline: 1800-112-100\nYou may also file a case before the District Consumer Disputes Redressal Commission for compensation.\nEvidence Required: Bill copy, Photographs of food, Medical report (if illness occurred)"
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "hotel_restaurant_faq_003",
+                "question": {
+                  "en": "Where to File Complaint for Stale Food?"
+                },
+                "answer": {
+                  "en": "If stale or unsafe food was served:\nPrimary Authority: Food Sfety Department/FSSAI\nFood Safety Department / FSSAI\nFor Compensation Claim: File complaint under Consumer Protection Act, 2019 before the District Consumer Commission."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "hotel_restaurant_faq_004",
+                "question": {
+                  "en": "Can Hotels Force Customers to Buy Food Coupons?"
+                },
+                "answer": {
+                  "en": "Hotels and cinema-attached restaurants cannot force customers to buy food coupons or bundled services. Such practice amounts to unfair trade practice under the Consumer Protection Act, 2019.\nYou may file complaint before:\nDistrict Consumer Commission\nState / National Consumer Helpline\nGeneral Guidance for Complainants\nAlways collect bill/receipt\nTake photographs immediately\nNote date & time of incident\nSend written complaint to hotel first\nApproach authorities if no satisfactory response"
+                },
+                "order": 40,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "investors",
+            "label": {
+              "en": "Investors"
+            },
+            "data_name": "Investors",
+            "order": 140,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "investors_faq_001",
+                "question": {
+                  "en": "Not received amount after the maturity date"
+                },
+                "answer": {
+                  "en": "If you have not received your investment amount after the maturity date (Fixed Deposit / Debenture / Bond / Scheme etc.), you should take the following steps:\n1. Check Maturity Terms\nVerify the maturity date, payment mode, and bank details mentioned in your deposit receipt / certificate / agreement.\n2. Send Written Reminder to Company\nSend a written notice (Registered Post / Email) to the company requesting immediate payment of maturity amount along with interest for delay. Keep copies of all correspondence.\n3. Claim Interest for Delay\nAs per company law and deposit rules, companies are generally liable to pay interest for delayed repayment.\n4. Approach Regulatory Authority (if required)\nDepending on the nature of investment:\nFor company fixed deposits – complaint may be filed with the Registrar of Companies (ROC) under the Ministry of Corporate Affairs.\nFor listed companies – complaint can be filed on SEBI SCORES portal.\nFor NBFC deposits – complaint may be filed with Reserve Bank of India (RBI).\n5. File Consumer Complaint\nIf payment is still not received, you may file a complaint before the District Consumer Commission for:\nRefund of maturity amount, Interest for delay, Compensation for mental harassment, Litigation cost\nYou should attach copies of:\nDeposit receipt / certificate, ID proof, Correspondence with company, Proof of non-payment"
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "investors_faq_002",
+                "question": {
+                  "en": "Company was closed, so Fixed Deposit amount was not received"
+                },
+                "answer": {
+                  "en": "If the company has closed operations and your fixed deposit amount has not been repaid, please take the following steps:\nCheck Company Status\nVerify whether the company is: Under liquidation, Strike-off, Insolvency proceedings, Simply non-operational\nThis information can be checked through the Ministry of Corporate Affairs (MCA) website.\n2. If Company is Under Liquidation\nFile your claim before the Official Liquidator.\nSubmit deposit receipt and proof of claim.\nInvestors are treated as creditors.\n3. If Insolvency Proceedings Started\nClaim must be filed before the Resolution Professional under the Insolvency process governed by the National Company Law Tribunal (NCLT).\n4. If Company is NBFC\nComplaint may be filed with Reserve Bank of India.\n5. If Fraud Suspected\nLodge complaint with Economic Offences Wing (EOW)\nFile complaint with SEBI (if applicable)\n6. Consumer Commission Option\nEven if company is closed, complaint may be filed before Consumer Commission to establish your claim. The order can help in recovery proceedings."
+                },
+                "order": 20,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "jewellery_ornaments",
+            "label": {
+              "en": "Jewellery & Ornaments"
+            },
+            "data_name": "Jewellery & Ornaments",
+            "order": 150,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "jewellery_ornaments_faq_001",
+                "question": {
+                  "en": "Jewellery is selling gold ornaments without Hallmark"
+                },
+                "answer": {
+                  "en": "As per Government of India rules, sale of gold jewellery without BIS Hallmarking is not permitted for notified categories. Hallmarking certifies the purity of gold and protects consumers from fraud.\nHallmarked jewellery must contain:\nBIS Logo\nPurity in Carat & Fineness (e.g., 22K916)\nAssaying & Hallmarking Centre mark\nJeweller’s Identification mark\nIf a jeweller is selling gold ornaments without Hallmark:\nWhat You Can Do:\n1. Ask the jeweller to provide only BIS hallmarked jewellery.\n2. Lodge complaint with the Bureau of Indian Standards (BIS).\n3. File complaint before the District Consumer Commission for unfair trade practice.\n4. Keep bill, photographs, and any proof of purchase.\nYou may file complaint online at the BIS portal of Bureau of Indian Standards\nNon-hallmarked gold sale is a violation and the jeweller can be penalized."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "jewellery_ornaments_faq_002",
+                "question": {
+                  "en": "Jeweler shop is not giving cash memo for purchase of ornaments"
+                },
+                "answer": {
+                  "en": "It is mandatory for every jeweler to issue a proper bill/cash memo for sale of gold ornaments.\nA valid jeweler bill must include:\nName & address of jeweler, GST Number , Date of purchase, Weight of gold (gross & net), Purity (22K/18K etc.), Gold rate per gram, Making charges, GST amount, Total amount paid\nRefusal to issue bill is:\nViolation of GST law, Violation of consumer rights, Unfair trade practice\nWhat You Can Do:\n1. Insist on proper GST invoice, do not purchase without bill.\n2. File complaint with GST Department (for tax violation).\n3. File complaint before District Consumer Commission.\n4. Inform Legal Metrology Department if weight-related fraud is suspected."
+                },
+                "order": 20,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "lpg_png_petrolt",
+            "label": {
+              "en": "LPG, PNG & Petrolt"
+            },
+            "data_name": "LPG, PNG & Petrolt",
+            "order": 160,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "lpg_png_petrolt_faq_001",
+                "question": {
+                  "en": "Delivery boy is demanding more amount than bill amount"
+                },
+                "answer": {
+                  "en": "Consumer is liable to pay only the amount mentioned in the cash memo/invoice.\nDo not pay extra for “delivery charges” or “tips”.\nAsk for printed receipt.\nImmediately complain to the gas agency and OMC helpline.\nIn case of repeated misconduct, file complaint before Consumer Commission."
+                },
+                "order": 10,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "landline_telephone",
+            "label": {
+              "en": "Landline Telephone"
+            },
+            "data_name": "Landline Telephone",
+            "order": 170,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "landline_telephone_faq_001",
+                "question": {
+                  "en": "Landline not working / No dial tone. What should I do?"
+                },
+                "answer": {
+                  "en": "First, register a complaint with your service provider’s customer care.\nNote down the complaint number and date.\nIf the issue is not resolved within reasonable time (generally 3–7 days), escalate to the Nodal Officer of the company.\nIf still unresolved, file complaint before the appropriate authority."
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "landline_telephone_faq_002",
+                "question": {
+                  "en": "Frequent disconnection / Disturbance in voice clarity"
+                },
+                "answer": {
+                  "en": "Lodge a written complaint.\nAsk for a technician visit.\nIf service interruption exceeds allowed limit, you may request rent rebate/compensation as per company policy.\nKeep record of complaint numbers and dates."
+                },
+                "order": 20,
+                "enabled": true
+              },
+              {
+                "id": "landline_telephone_faq_003",
+                "question": {
+                  "en": "Excess billing / Wrong bill amount"
+                },
+                "answer": {
+                  "en": "Submit written objection within 15–30 days of receiving the bill.\nRequest itemized bill details.\nAsk the provider not to disconnect service until dispute is resolved.\nPay the undisputed amount to avoid late fees.\nIf billing dispute is not resolved, escalate to higher authority."
+                },
+                "order": 30,
+                "enabled": true
+              },
+              {
+                "id": "landline_telephone_faq_004",
+                "question": {
+                  "en": "Landline disconnected without notice"
+                },
+                "answer": {
+                  "en": "Service provider must give prior notice before disconnection (except in fraud cases).\nIf disconnected without valid reason, demand:\nImmediate reconnection\nWaiver of reconnection charges\nCompensation for deficiency of service"
+                },
+                "order": 40,
+                "enabled": true
+              },
+              {
+                "id": "landline_telephone_faq_005",
+                "question": {
+                  "en": "Delay in new landline connection"
+                },
+                "answer": {
+                  "en": "Company should provide connection within reasonable time.\nIf there is abnormal delay, you may:\nFile written complaint\nAsk for refund of installation charges (if paid)\nSeek compensation for delay"
+                },
+                "order": 50,
+                "enabled": true
+              },
+              {
+                "id": "landline_telephone_faq_006",
+                "question": {
+                  "en": "Security deposit refund not received after surrender"
+                },
+                "answer": {
+                  "en": "After surrender of connection, deposit should be refunded within prescribed period.\nIf refund is delayed:\nSend written reminder, claim interest for delay, Escalate complaint\nStep 1: Customer Care: Complain to your service provider.\nStep 2: Nodal Officer: If not resolved within 30 days, approach the Nodal Officer of the company.\nStep 3: Appellate Authority:  If still dissatisfied, file appeal within 30 days.\nStep 4: Telecom Regulatory Authority: You may refer to: Telecom Regulatory Authority of India (TRAI)\nYes. If there is deficiency in service, consumer can approach the appropriate Consumer Commission under: Consumer Protection Act, 2019\nReliefs available: Compensation, Refund, Interest, Mental harassment, Litigation costs"
+                },
+                "order": 60,
+                "enabled": true
+              }
+            ]
+          },
+          {
+            "id": "municipal_corp_nagarpalika",
+            "label": {
+              "en": "Municipal Corp. Nagarpalika"
+            },
+            "data_name": "Municipal Corp. Nagarpalika",
+            "order": 180,
+            "enabled": true,
+            "faqs": [
+              {
+                "id": "municipal_corp_nagarpalika_faq_001",
+                "question": {
+                  "en": "Drainage Overflowing – What to Do?"
+                },
+                "answer": {
+                  "en": "Issue: Drainage line is overflowing near house/road causing foul smell and unhygienic conditions.\nIf drainage is overflowing in your area, you should immediately lodge a written complaint with your concerned Municipal Corporation / Nagarpalika.\n1. File complaint through:\nMunicipal ward office, Online complaint portal (if available)\nHelpline number of the Municipal Corporation\n2. Mention:\nExact address/location, Since when the problem exists\nHealth issues or inconvenience caused\n3. Keep complaint number or acknowledgment copy.\nIf No Action is Taken:\nSend a reminder complaint to:\nMunicipal Commissioner / Chief Officer\nHealth Department of Municipality\nFile grievance on State Government Public Grievance Portal\nApproach District Collector Office\nFile complaint before Consumer Commission (if service deficiency is proved)\nFile complaint before Local Health Officer"
+                },
+                "order": 10,
+                "enabled": true
+              },
+              {
+                "id": "municipal_corp_nagarpalika_faq_002",
+                "question": {
+                  "en": "Lack of Cleanliness / Garbage Not Collected"
+                },
+                "answer": {
+                  "en": "Issue: Garbage not collected regularly, poor sanitation, mosquito breeding, unhygienic surroundings.\nMaintaining cleanliness and regular garbage collection is the responsibility of the Municipal Corporation / Nagarpalika.\n1        Register complaint with: Sanitary Inspector of your ward, Municipal helpline, Online grievance portal\n2        Take photographs as proof, Note complaint number and date.\nIf Problem Continues:\nSubmit written complaint to Municipal Commissioner / Chief Officer.\nSend Copy to :   Health Department, District Collector\nLodge complaint on Swachh Bharat Mission portal (if applicable).\no    File RTI application asking: Cleaning schedule of your area\no    Name of contractor responsible\nIf serious health hazard persists, complaint can be filed before appropriate authority for negligence.\nCompany is not giving salary for the last month\nNon-payment of salary is an employer–employee dispute. Such matters are related to service conditions and employment contracts and are not covered under the Consumer Protection Act, because an employee is not considered a “consumer” in this relationship.\nYou may take action through the following authorities:\nApproach the Labour Commissioner / Labour Office of your area.\nFile a complaint under the Payment of Wages Act, 1936 (if applicable).\nRaise an industrial dispute under the Industrial Disputes Act, 1947 (if applicable).\nSend a legal notice to the employer through an advocate.\nFile a case before the appropriate Labour Court / Industrial Tribunal."
+                },
+                "order": 20,
+                "enabled": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "actions": {
+    "file_complaint": {
+      "enabled": true,
+      "label": {
+        "en": "File Complaint"
+      }
+    },
+    "change_language": {
+      "enabled": true,
+      "label": {
+        "en": "Change Language"
+      }
+    },
+    "contact_support": {
+      "enabled": true,
+      "label": {
+        "en": "Contact Support"
+      }
+    }
+  },
+  "support": {
+    "phone": "18002330332",
+    "email": "complaints@cercindia.org",
+    "hours": {
+      "en": "Monday-Friday, 10:30 AM-5:30 PM"
+    }
+  }
+}

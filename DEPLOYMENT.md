@@ -35,7 +35,7 @@ Answer-mode settings:
 | Variable | Required | Description |
 |---|---:|---|
 | `ANSWER_MODE` | Yes | `IVR` or `RAG`; missing/invalid values stop startup |
-| `QNA_JSON_PATH` | IVR | JSON path; defaults to `qna_data.json` |
+| `IVR_CONFIG_PATH` | IVR | Configurable IVR JSON path; defaults to `ivr_config.json` |
 | `RAG_INDEX_PATH` | RAG | Packaged FAISS directory; defaults to `ngo_index` |
 | `RAG_EMBEDDING_MODEL` | RAG | Must match the index manifest; defaults to `BAAI/bge-small-en-v1.5` |
 | `RAG_EMBEDDING_MODEL_PATH` | RAG on Vercel | Bundled model directory; use `embedding_models/bge-small-en-v1.5` |

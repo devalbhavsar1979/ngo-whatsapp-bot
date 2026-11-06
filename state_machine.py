@@ -42,7 +42,10 @@ class UserSession:
         self.state = LANG_SELECT
         self.lang = None  # e.g. "lang_english"
         self.category = None
+        self.selected_group_id = None
+        self.selected_category_id = None
         self.selected_question = None
+        self.ivr_config_version = None
         self.answer_mode = None
         self.last_question = None
         self.last_answer_sources = []

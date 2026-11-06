@@ -10,7 +10,6 @@ VALID_ANSWER_MODES = {"IVR", "RAG"}
 @dataclass(frozen=True)
 class AnswerConfig:
     mode: str
-    qna_json_path: str
     rag_index_path: str
     rag_embedding_model: str
     rag_embedding_model_path: str
@@ -54,7 +53,6 @@ def load_answer_config() -> AnswerConfig:
 
     return AnswerConfig(
         mode=mode,
-        qna_json_path=os.getenv("QNA_JSON_PATH", "qna_data.json").strip(),
         rag_index_path=os.getenv("RAG_INDEX_PATH", "ngo_index").strip(),
         rag_embedding_model=os.getenv(
             "RAG_EMBEDDING_MODEL", "BAAI/bge-small-en-v1.5"
